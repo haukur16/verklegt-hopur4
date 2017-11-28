@@ -13,6 +13,7 @@ int main(int argc, const char * argv[]) {
     cout << "Enter a number: " << endl;
     int number;
     cin >> number;
-    cout << number+number;
+    cout << number+number << endl;
+    cout << number*number << endl;
     return 0;
 }
