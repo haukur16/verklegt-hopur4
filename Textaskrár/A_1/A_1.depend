@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1511788870 source:c:\users\lenovo\documents\forritun\1_a\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+
