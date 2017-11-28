@@ -13,30 +13,36 @@ using namespace std;
 
 class Pizza {
 private:
+    double baseprice;
     string topping;
     double toppingprice;
-    double baseprice;
     
     
 public:
     Pizza() {
-        topping = ' ';
-        toppingprice = 0.0;
         baseprice = 0.0;
     }
     
     
-friend istream& operator >>(istream& in, Pizza& pizza) {
-    cout << "Input price of base pizza: ";
-    in >> pizza.baseprice;
+friend istream& operator >>(istream& in, Pizza& topp) {
+    cout << "Input topping: ";
+    in >> topp.topping;
+    cout << "Input topping price: ";
+    in >> topp.toppingprice;
         
         return in;
     }
-friend ostream& operator << (ostream& out, const Pizza& pizza) {
-    out << "Baseprice: " << pizza.baseprice;
+friend ostream& operator << (ostream& out, const Pizza& topp) {
+    out << "Topping: " << topp.topping;
+    out << "Topping price: " << topp.toppingprice;
     return out;
     }
+    
+
+
 };
+
+
 
 
 
@@ -47,7 +53,19 @@ int main(int argc, const char * argv[]) {
     cout << "2 - input topping" << endl;
     cin >> pick;
     
+    
     if (pick == 1) {
+    ifstream fin;
+    int baseprice = 0;
+        cout << "Enter price of base pizza: ";
+        cin >> baseprice;
+        ofstream fout;
+        fout.open("text_file_Pizza.txt", ios::app);
+        fout << baseprice;
+        fout.close();
+    }
+    
+    if (pick == 2) {
     Pizza pizza1;
     cin >> pizza1;
     
@@ -69,7 +87,6 @@ int main(int argc, const char * argv[]) {
     fin.close();
         
     }
-    
     
     return 0;
 }
