@@ -20,7 +20,8 @@ private:
     
 public:
     Pizza() {
-        baseprice = 0.0;
+        topping = ' ';
+        toppingprice = 0.0;
     }
     
     
@@ -33,8 +34,7 @@ friend istream& operator >>(istream& in, Pizza& topp) {
         return in;
     }
 friend ostream& operator << (ostream& out, const Pizza& topp) {
-    out << "Topping: " << topp.topping;
-    out << "Topping price: " << topp.toppingprice;
+    out << topp.topping << " (" << topp.toppingprice << " kr)";
     return out;
     }
     
