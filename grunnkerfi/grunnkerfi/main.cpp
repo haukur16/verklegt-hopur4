@@ -34,7 +34,7 @@ friend istream& operator >>(istream& in, Pizza& topp) {
         return in;
     }
 friend ostream& operator << (ostream& out, const Pizza& topp) {
-    out << topp.topping << " (" << topp.toppingprice << " kr)";
+    out << topp.topping << " (" << topp.toppingprice << " kr)" << endl;
     return out;
     }
     
@@ -61,7 +61,7 @@ int main(int argc, const char * argv[]) {
         cin >> baseprice;
         ofstream fout;
         fout.open("text_file_Pizza.txt", ios::app);
-        fout << baseprice;
+        fout << baseprice << endl;
         fout.close();
     }
     
@@ -70,14 +70,14 @@ int main(int argc, const char * argv[]) {
     cin >> pizza1;
     
     ofstream fout;
-    fout.open("text_file_Pizza.txt");
+        fout.open("text_file_Pizza.txt", ios::app);
     fout << pizza1;
     fout.close();
     
     Pizza pizza2;
     
     ifstream fin;
-    fin.open("text_file_Pizza.txt");
+        fin.open("text_file_Pizza.txt");
     if(fin.is_open()) {
         fin >> pizza2;
     }
@@ -85,7 +85,6 @@ int main(int argc, const char * argv[]) {
         cout << "cant open file";
     }
     fin.close();
-        
     }
     
     return 0;
