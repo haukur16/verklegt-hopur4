@@ -73,18 +73,6 @@ int main(int argc, const char * argv[]) {
         fout.open("text_file_Pizza.txt", ios::app);
     fout << pizza1;
     fout.close();
-    
-    Pizza pizza2;
-    
-    ifstream fin;
-        fin.open("text_file_Pizza.txt");
-    if(fin.is_open()) {
-        fin >> pizza2;
-    }
-    else{
-        cout << "cant open file";
-    }
-    fin.close();
     }
     
     return 0;
