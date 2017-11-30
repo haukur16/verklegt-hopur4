@@ -1,0 +1,6 @@
+1 pepperoni 2.5
+2 ham 3.5
+3 onion 2.5
+4 mushroom 2.4
+5 pepper 2.1
+6 pineapple 1.6
