@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1512400665 source:c:\users\stefan\desktop\hopur-4\main.cpp
+	<iostream>
+	<string>
+	<fstream>
+	"Pizza.h"
+
+1512400777 c:\users\stefan\desktop\hopur-4\include\modle\pizza.h
+	<iostream>
+	<fstream>
+	<string>
+
