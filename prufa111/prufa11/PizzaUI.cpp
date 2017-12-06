@@ -7,6 +7,7 @@
 //
 #include <vector>
 #include <iostream>
+#include <fstream>
 #include "PizzaUI.hpp"
 #include "Topping.hpp"
 #include "Pizza.hpp"
@@ -51,8 +52,8 @@ void PizzaUI::startUI () {
     else if(select == 'r') {
         try {
             Pizza pizza = pizzarepo.retrievePizza();
-            cout << &pizza;  // kemur villa ef ég tek út &
-            
+            cout << pizza;
+
             cout << endl;
         }
         catch (FileNotFoundException e){

@@ -47,4 +47,15 @@ void SalaUI::startUI() {
         pizzarepo.storePizza(pizza);
         cout << endl;
     }
+    else if(select == 'r') {
+        try {
+            ServiceSala pizza = pizzarepo.retrievePizza();
+            cout << pizza; // kemur villa ef ég tek út &
+            
+            cout << endl;
+        }
+        catch (FileNotFoundException e){
+            cout << "Pizza file not found" << endl;
+        }
+    }
 }

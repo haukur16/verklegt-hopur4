@@ -26,7 +26,7 @@ public:
     void write(ofstream& fout) const;
     void read(ifstream& fin);
     
-    friend ifstream& operator >> (ifstream& in, Pizza& pizza);
-    friend ofstream& operator << (ofstream& out, const Pizza& pizza);
+    friend istream& operator >> (istream& in, Pizza& pizza);
+    friend ostream& operator << (ostream& out, const Pizza& pizza);
 };
 #endif /* Pizza_hpp */

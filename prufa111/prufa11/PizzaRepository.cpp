@@ -27,13 +27,10 @@ void PizzaRepository::storePizza(const Pizza& pizza) {
 Pizza PizzaRepository::retrievePizza() {
     ifstream fin;
     fin.open("pizza.bin", ios::binary);
-    
     if (fin.is_open()) {
         Pizza pizza;
         pizza.read(fin);
-        
         fin.close();
-        
         return pizza;
     }
     throw FileNotFoundException();

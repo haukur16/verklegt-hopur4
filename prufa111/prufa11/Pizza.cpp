@@ -40,7 +40,7 @@ void Pizza::read(ifstream& fin) {
     }
 }
 
-ifstream& operator >>(ifstream& in, Pizza& pizza) {
+istream& operator >>(istream& in, Pizza& pizza) {
     int toppingcount;
     in >> toppingcount;
     
@@ -53,7 +53,7 @@ ifstream& operator >>(ifstream& in, Pizza& pizza) {
     return in;
 }
 
-ofstream& operator <<(ofstream& out, const Pizza& pizza) {
+ostream& operator <<(ostream& out, const Pizza& pizza) {
     out << "Pizza with toppings:" << endl;
     
     for (unsigned int i=0; i<pizza.toppings.size(); i++) {
