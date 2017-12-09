@@ -15,7 +15,7 @@ UmsjonRepo::UmsjonRepo() {
     
 }
 
-void UmsjonRepo::storeAllToppings(const vector<ServiceUmsjon> &toppings) {
+void UmsjonRepo::storeAllToppings(const vector<Topping> &toppings) {
     ofstream fout;
     fout.open("toppings.bin", ios::binary);
     
@@ -29,9 +29,9 @@ void UmsjonRepo::storeAllToppings(const vector<ServiceUmsjon> &toppings) {
     fout.close();
 }
 
-vector<ServiceUmsjon> UmsjonRepo::retriveAllToppings() {
-    vector<ServiceUmsjon> toppings;
-    ServiceUmsjon topping;
+vector<Topping> UmsjonRepo::retriveAllToppings() {
+    vector<Topping> toppings;
+    Topping topping;
     
     ifstream fin;
     fin.open("toppings.bin", ios::binary);

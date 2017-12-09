@@ -9,8 +9,8 @@
 #include <vector>
 #include <iostream>
 #include "SalaUI.hpp"
-#include "ServiceUmsjon.hpp"
-#include "ServiceSala.hpp"
+#include "Topping.hpp"
+#include "Pizza.hpp"
 
 using namespace std;
 
@@ -27,9 +27,9 @@ void SalaUI::startUI() {
     cin >> select;
     
     if (select == 'm') {
-        vector<ServiceUmsjon> toppings = topprepo.retriveAllToppings();
+        vector<Topping> toppings = topprepo.retriveAllToppings();
         
-        ServiceSala pizza;
+        Pizza pizza;
         
         int toppingselection = -1;
         while (toppingselection != 0) {
@@ -49,9 +49,8 @@ void SalaUI::startUI() {
     }
     else if(select == 'r') {
         try {
-            ServiceSala pizza = pizzarepo.retrievePizza();
-            cout << pizza; // kemur villa ef ég tek út &
-            
+            Pizza pizza = pizzarepo.retrievePizza();
+            cout << pizza;
             cout << endl;
         }
         catch (FileNotFoundException e){

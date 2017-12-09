@@ -14,7 +14,7 @@ SalaRepo::SalaRepo() {
     
 }
 
-void SalaRepo::storePizza(const ServiceSala& pizza) {
+void SalaRepo::storePizza(const Pizza& pizza) {
     ofstream fout;
     fout.open("pizza.bin", ios::binary);
     
@@ -23,17 +23,19 @@ void SalaRepo::storePizza(const ServiceSala& pizza) {
     fout.close();
 }
 
-ServiceSala SalaRepo::retrievePizza() {
+Pizza SalaRepo::retrievePizza() {
     ifstream fin;
     fin.open("pizza.bin", ios::binary);
     
     if (fin.is_open()) {
-        ServiceSala pizza;
-        pizza.read(fin);
+        Pizza pizza;
         
+        pizza.read(fin);
         fin.close();
         
         return pizza;
     }
     throw FileNotFoundException();
 }
+
+

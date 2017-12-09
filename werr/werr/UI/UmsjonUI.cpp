@@ -7,7 +7,7 @@
 //
 
 #include "UmsjonUI.hpp"
-#include "ServiceUmsjon.hpp"
+#include "Topping.hpp"
 
 #include <vector>
 #include <iostream>
@@ -27,7 +27,7 @@ void UmsjonUI::startUI () {
     cin >> select;
     
     if (select == 't') {
-        vector<ServiceUmsjon> toppings = topprepo.retriveAllToppings();
+        vector<Topping> toppings = topprepo.retriveAllToppings();
         
         cout << "These are the current toppings int the system: " << endl;
         for (unsigned int i=0; i<toppings.size(); i++) {
@@ -35,7 +35,7 @@ void UmsjonUI::startUI () {
         }
         
         char select = 'y';
-        ServiceUmsjon topping;
+        Topping topping;
         while(select == 'y') {
             cout << endl;
             

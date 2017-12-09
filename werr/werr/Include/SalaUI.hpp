@@ -14,7 +14,6 @@ class SalaUI {
 private:
     UmsjonRepo topprepo;
     SalaRepo pizzarepo;
-    
 public:
     SalaUI();
     void startUI();

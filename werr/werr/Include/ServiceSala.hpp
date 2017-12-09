@@ -13,20 +13,14 @@
 #include <vector>
 
 using namespace std;
-#include "ServiceUmsjon.hpp"
+#include "Topping.hpp"
 
 class ServiceSala {
 private:
-    vector<ServiceUmsjon> toppings;
+    
 public:
     ServiceSala();
     
-    void addTopping(ServiceUmsjon topping);
-    
-    void write(ofstream& fout) const;
-    void read(ifstream& fin);
-    
-    friend ifstream& operator >> (ifstream& in, ServiceSala& pizza);
-    friend ofstream& operator << (ofstream& out, const ServiceSala& pizza);
+
 };
 #endif /* ServiceSala_hpp */

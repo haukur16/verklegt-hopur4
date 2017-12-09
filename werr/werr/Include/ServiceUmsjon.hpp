@@ -21,12 +21,6 @@ private:
     
 public:
     ServiceUmsjon();
-    ServiceUmsjon(string toppings, double toppingprice);
-    void write(ofstream& fout) const;
-    void read(ifstream& fin);
-    friend istream& operator >>(istream& in, ServiceUmsjon& topp);
-    friend ostream& operator << (ostream& out, const ServiceUmsjon& topp);
-    
 };
 
 #endif /* ServiceUmsjon_hpp */
