@@ -15,6 +15,7 @@ void MainUI::startUI() {
         cout << "m - Manager" << endl;
         cout << "S - Salesman" << endl;
         cout << "B - Baker" << endl;
+        cout << "d - Delivery " << endl;
         cout << "q - quit" << endl;
         
         cin >> select;
@@ -32,6 +33,9 @@ void MainUI::startUI() {
                 cout << endl;
                 break;
             case 'b':
+                cout << "vantar" << endl;
+                break;
+            case 'd':
                 cout << "vantar" << endl;
                 break;
             default:
