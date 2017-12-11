@@ -25,6 +25,7 @@ void SalaRepo::storePizza(const Pizza& pizza) {
 
 Pizza SalaRepo::retrievePizza() {
     ifstream fin;
+    
     fin.open("pizza.bin", ios::binary);
     
     if (fin.is_open()) {

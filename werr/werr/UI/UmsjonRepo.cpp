@@ -17,7 +17,7 @@ UmsjonRepo::UmsjonRepo() {
 
 void UmsjonRepo::storeAllToppings(const vector<Topping> &toppings) {
     ofstream fout;
-    fout.open("toppings.bin", ios::binary);
+    fout.open("topping.bin", ios::binary);
     
     int toppingcount = toppings.size();
     
@@ -34,7 +34,7 @@ vector<Topping> UmsjonRepo::retriveAllToppings() {
     Topping topping;
     
     ifstream fin;
-    fin.open("toppings.bin", ios::binary);
+    fin.open("topping.bin", ios::binary);
     
     if(fin.is_open()) {
         int toppingcount;

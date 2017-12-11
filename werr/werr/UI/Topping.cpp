@@ -16,13 +16,15 @@ Topping::Topping(){
 void Topping::setname(string n) {
     name = n;
 }
+
+
 string Topping::getname() {
     return this -> name;
 }
-
 void Topping::setprice(double p) {
     price = p;
 }
+
 double Topping::getprice() {
     return this -> price;
 }
@@ -60,6 +62,7 @@ istream& operator >>(istream& in, Topping& topp) {
     
     return in;
 }
+
 ostream& operator << (ostream& out, const Topping& topp) {
     out << topp.name << " " << topp.price << endl;
     return out;
