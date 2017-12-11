@@ -21,8 +21,8 @@ public:
     UmsjonRepo();
     void storeAllToppings(const vector<Topping> &toppings);
     vector<Topping> retriveAllToppings();
-//    vector<Other_stuff> retriveAllOtherStuff();
-//    void storeAllOtherStuff(const vector<Other_stuff> &other_stuff);
+    vector<Other_stuff> retriveAllOtherStuff();
+    void storeAllOtherStuff(const vector<Other_stuff> &other_stuff);
 private:
 
 };

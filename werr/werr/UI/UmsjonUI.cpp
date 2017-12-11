@@ -8,7 +8,7 @@
 
 #include "UmsjonUI.hpp"
 #include "Topping.hpp"
-//#include "Other_stuff.hpp"
+#include "Other_stuff.hpp"
 
 #include <vector>
 #include <iostream>
@@ -49,7 +49,7 @@ void UmsjonUI::startUI () {
             }
         }
         topprepo.storeAllToppings(toppings);
-        
+
     }
     else if(select == 'o'){
         vector<Other_stuff> other_stuff = stuffrepo.retriveAllOtherStuff();
@@ -64,14 +64,14 @@ void UmsjonUI::startUI () {
         while(select == 'y') {
             cout << endl;
 
-//            cout << "Add another item (y/n)? ";
-   //         cin >> select;
- //           if (select == 'y') {
-     //           cin >> otherStuff;
-   //             other_stuff.push_back(otherStuff);
-     //       }
-       // }
-   //     stuffrepo.storeAllOtherStuff(other_stuff);
+            cout << "Add another item (y/n)? ";
+            cin >> select;
+            if (select == 'y') {
+                cin >> otherStuff;
+                other_stuff.push_back(otherStuff);
+            }
+        }
+        stuffrepo.storeAllOtherStuff(other_stuff);
 
-    //}
+    }
 }
