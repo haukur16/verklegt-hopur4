@@ -11,8 +11,8 @@
 #include "UmsjonRepo.hpp"
 class UmsjonUI {
 private:
+    
     UmsjonRepo topprepo;
-    UmsjonRepo stuffrepo;
 public:
     UmsjonUI();
     void startUI();

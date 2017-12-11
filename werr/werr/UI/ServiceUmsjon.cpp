@@ -10,8 +10,5 @@
 #include <fstream>
 
 ServiceUmsjon::ServiceUmsjon() {
-    
+
 }
-
-
-

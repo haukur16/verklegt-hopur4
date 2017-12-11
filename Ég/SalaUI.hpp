@@ -1,21 +1,22 @@
 //
-//  UmsjonUI.hpp
+//  SalaUI.hpp
 //  werr
 //
 //  Created by Haukur Guðmundsson on 06/12/2017.
 //  Copyright © 2017 Haukur Guðmundsson. All rights reserved.
 //
 
-#ifndef UmsjonUI_hpp
-#define UmsjonUI_hpp
+#ifndef SalaUI_hpp
+#define SalaUI_hpp
 #include "UmsjonRepo.hpp"
-class UmsjonUI {
+#include "SalaRepo.hpp"
+class SalaUI {
 private:
     UmsjonRepo topprepo;
-    UmsjonRepo stuffrepo;
+    SalaRepo pizzarepo;
+    
 public:
-    UmsjonUI();
+    SalaUI();
     void startUI();
 };
-
-#endif /* UmsjonUI_hpp */
+#endif /* SalaUI_hpp */

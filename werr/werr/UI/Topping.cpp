@@ -11,7 +11,7 @@
 #include <iostream>
 
 Topping::Topping(){
-    
+
 }
 void Topping::setname(string n) {
     name = n;
@@ -29,37 +29,37 @@ double Topping::getprice() {
 
 void Topping::write(ofstream& fout) const {
     int stringlength = name.length() +1;
-    
+
     fout.write((char*)(&stringlength), sizeof(int));
     fout.write(name.c_str(), stringlength);
-    
+
     fout.write((char*)(&price), sizeof(double));
 }
 
 void Topping::read(ifstream& fin) {
     int stringlength;
-    
+
     fin.read((char*)(&stringlength), sizeof(int));
     char *str = new char[stringlength];
-    
+
     fin.read(str, stringlength);
-    
+
     name = str;
-    
+
     fin.read((char*)(&price), sizeof(double));
-    
+
     delete [] str;
-    
-    
 }
+
 istream& operator >>(istream& in, Topping& topp) {
     cout << "Input topping: ";
     in >> topp.name;
     cout << "Input topping price: ";
     in >> topp.price;
-    
+
     return in;
 }
+
 ostream& operator << (ostream& out, const Topping& topp) {
     out << topp.name << " " << topp.price << endl;
     return out;

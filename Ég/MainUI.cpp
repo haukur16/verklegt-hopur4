@@ -12,13 +12,15 @@ void MainUI::startUI() {
     char select = '\0';
 
     while(select != 'q') {
-        cout << "M - Manager" << endl;
+        cout << "m - Manager" << endl;
         cout << "S - Salesman" << endl;
         cout << "B - Baker" << endl;
-        cout << "D - Delivery" << endl;
-        cout << "Q - Quit" << endl;
+        cout << "q - quit" << endl;
+        cout << endl;
 
         cin >> select;
+
+        cout << endl;
 
         UmsjonUI umsjonui;
         SalaUI salaui;
@@ -27,6 +29,7 @@ void MainUI::startUI() {
                 umsjonui.startUI();
                 cout << endl;
                 break;
+
             case 's':
                 salaui.startUI();
                 cout << endl;
@@ -34,8 +37,6 @@ void MainUI::startUI() {
             case 'b':
                 cout << "vantar" << endl;
                 break;
-            case 'd':
-                cout << "vantar" << endl;
             default:
                 break;
         }
