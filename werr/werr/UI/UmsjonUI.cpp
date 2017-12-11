@@ -8,6 +8,7 @@
 
 #include "UmsjonUI.hpp"
 #include "Topping.hpp"
+//#include "Other_stuff.hpp"
 
 #include <vector>
 #include <iostream>
@@ -16,30 +17,31 @@
 using namespace std;
 
 UmsjonUI::UmsjonUI() {
-    
+
 }
 
 void UmsjonUI::startUI () {
     char select = '\0';
-    
+
     cout << "t: add toppings" << endl;
-    
+    cout << "o: add other products" << endl;
+
     cin >> select;
-    
+
     if (select == 't') {
         vector<Topping> toppings = topprepo.retriveAllToppings();
-        
-        cout << "These are the current toppings int the system: " << endl;
+
+        cout << "These are the current toppings in the system: " << endl;
         for (unsigned int i=0; i<toppings.size(); i++) {
             cout << "["<< i+1 << "]" << toppings[i];
         }
-        
+
         char select = 'y';
         Topping topping;
         while(select == 'y') {
             cout << endl;
-            
-            cout << "Add another topping (y)? ";
+
+            cout << "Add another topping (y/n)? ";
             cin >> select;
             if (select == 'y') {
                 cin >> topping;
@@ -49,4 +51,27 @@ void UmsjonUI::startUI () {
         topprepo.storeAllToppings(toppings);
         
     }
+    else if(select == 'o'){
+        vector<Other_stuff> other_stuff = stuffrepo.retriveAllOtherStuff();
+
+        cout << "These are the current items in the system: " << endl;
+        for (unsigned int i = 0; i < other_stuff.size(); i++) {
+            cout << "[" << i+1 << "]" << other_stuff[i];
+        }
+
+        char select = 'y';
+        Other_stuff otherStuff;
+        while(select == 'y') {
+            cout << endl;
+
+//            cout << "Add another item (y/n)? ";
+   //         cin >> select;
+ //           if (select == 'y') {
+     //           cin >> otherStuff;
+   //             other_stuff.push_back(otherStuff);
+     //       }
+       // }
+   //     stuffrepo.storeAllOtherStuff(other_stuff);
+
+    //}
 }

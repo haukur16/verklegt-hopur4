@@ -10,8 +10,7 @@
 #define UmsjonRepo_hpp
 
 #include <vector>
-#include "Topping.hpp"
-#include "Other_stuff.hpp"
+#include "ServiceUmsjon.hpp"
 
 using namespace std;
 
@@ -19,12 +18,10 @@ class UmsjonRepo
 {
 public:
     UmsjonRepo();
-    void storeAllToppings(const vector<Topping> &toppings);
-    vector<Topping> retriveAllToppings();
-//    vector<Other_stuff> retriveAllOtherStuff();
-//    void storeAllOtherStuff(const vector<Other_stuff> &other_stuff);
+    void storeAllToppings(const vector<ServiceUmsjon> &toppings);
+    vector<ServiceUmsjon> retriveAllToppings();
 private:
-
+    
 };
 
 #endif /* UmsjonRepo_hpp */

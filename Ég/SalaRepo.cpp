@@ -11,29 +11,28 @@
 using namespace std;
 
 SalaRepo::SalaRepo() {
-
+    
 }
 
-void SalaRepo::storePizza(const Pizza& pizza) {
+void SalaRepo::storePizza(const ServiceSala& pizza) {
     ofstream fout;
     fout.open("pizza.bin", ios::binary);
-
+    
     pizza.write(fout);
-
+    
     fout.close();
 }
 
-Pizza SalaRepo::retrievePizza() {
+ServiceSala SalaRepo::retrievePizza() {
     ifstream fin;
-    
     fin.open("pizza.bin", ios::binary);
-
+    
     if (fin.is_open()) {
-        Pizza pizza;
-
+        ServiceSala pizza;
         pizza.read(fin);
+        
         fin.close();
-
+        
         return pizza;
     }
     throw FileNotFoundException();
