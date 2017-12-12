@@ -12,6 +12,7 @@
 #include <vector>
 #include "Topping.hpp"
 #include "Other_stuff.hpp"
+#include "PizzaMenu.hpp"
 
 using namespace std;
 
@@ -23,6 +24,8 @@ public:
     vector<Topping> retriveAllToppings();
     vector<Other_stuff> retriveAllOtherStuff();
     void storeAllOtherStuff(const vector<Other_stuff> &other_stuff);
+    vector<PizzaMenu> retrivePizzaMenu();
+    void storePizzaMenu(const vector<PizzaMenu> &pizzaMenu);
 private:
 
 };

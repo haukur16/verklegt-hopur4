@@ -16,18 +16,17 @@ class PizzaMenu {
 private:
     string name;
     double price;
-    string toppings;
+    string pizzaTopp;
+    
 public:
     PizzaMenu();
-    void setname(string name);
+    PizzaMenu(string name, double price, string pizzaTopp);
     string getname();
-    void setprice(double price);
     double getprice();
-    void settoppings(string toppings);
-    string gettoppings();
+    string gettopping();
     void write(ofstream& fout) const;
     void read(ifstream& fin);
-    friend istream& operator >>(istream& in, PizzaMenu& menu);
+    friend istream& operator >> (istream& in, PizzaMenu& menu);
     friend ostream& operator << (ostream& out, const PizzaMenu& menu);
     
 };

@@ -19,6 +19,7 @@ void UmsjonRepo::storeAllToppings(const vector<Topping> &toppings) {
     ofstream fout;
     fout.open("topping.bin", ios::binary);
 
+
     int toppingcount = toppings.size();
 
     fout.write((char*)(&toppingcount), sizeof(int));
@@ -35,7 +36,6 @@ vector<Topping> UmsjonRepo::retriveAllToppings() {
 
     ifstream fin;
     fin.open("topping.bin", ios::binary);
-
     if(fin.is_open()) {
         int toppingcount;
 
@@ -81,6 +81,40 @@ void UmsjonRepo::storeAllOtherStuff(const vector<Other_stuff> &other_stuff) {
 
     for (int i=0; i<otherStuffcount; i++) {
         other_stuff[i].write(fout);
+    }
+    fout.close();
+}
+
+vector<PizzaMenu> UmsjonRepo::retrivePizzaMenu() {
+    vector<PizzaMenu> pizzaMenu;
+    PizzaMenu pizzamenu;
+    
+    ifstream fin;
+    fin.open("pizza_menu.bin", ios::binary);
+    
+    if(fin.is_open()) {
+        int pizzaMenucount;
+        
+        fin.read((char*)(&pizzaMenucount), sizeof(int));
+        
+        for (int i=0; i<pizzaMenucount; i++) {
+            pizzamenu.read(fin);
+            pizzaMenu.push_back(pizzamenu);
+        }
+        fin.close();
+    }
+    return pizzaMenu;
+}
+void UmsjonRepo::storePizzaMenu(const vector<PizzaMenu> &pizzaMenu) {
+    ofstream fout;
+    fout.open("pizza_menu.bin", ios::binary);
+    
+    int pizzaMenucount = pizzaMenu.size();
+    
+    fout.write((char*)(&pizzaMenucount), sizeof(int));
+    
+    for (int i=0; i<pizzaMenucount; i++) {
+        pizzaMenu[i].write(fout);
     }
     fout.close();
 }

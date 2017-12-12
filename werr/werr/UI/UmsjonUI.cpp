@@ -9,6 +9,7 @@
 #include "UmsjonUI.hpp"
 #include "Topping.hpp"
 #include "Other_stuff.hpp"
+#include "PizzaMenu.hpp"
 
 #include <vector>
 #include <iostream>
@@ -25,6 +26,7 @@ void UmsjonUI::startUI () {
 
     cout << "t: add toppings" << endl;
     cout << "o: add other products" << endl;
+    cout << "p: add to Pizza Menu " << endl;
 
     cin >> select;
 
@@ -49,6 +51,7 @@ void UmsjonUI::startUI () {
             }
         }
         topprepo.storeAllToppings(toppings);
+
     }
     else if(select == 'o'){
         vector<Other_stuff> other_stuff = stuffrepo.retriveAllOtherStuff();
@@ -72,4 +75,28 @@ void UmsjonUI::startUI () {
         }
         stuffrepo.storeAllOtherStuff(other_stuff);
     }
+    else if (select == 'p') {
+        vector<PizzaMenu> pizzaMenu = menurepo.retrivePizzaMenu();
+
+        cout << "These are the current items on the menu: " << endl;
+        for (unsigned int i = 0; i < pizzaMenu.size(); i++) {
+            cout << "[" << i+1 << "]" << pizzaMenu[i];
+        }
+
+        char select = 'y';
+        PizzaMenu pizzamenu;
+        while(select == 'y') {
+            cout << endl;
+
+            cout << "Add another item (y/n)? ";
+            cin >> select;
+            if (select == 'y') {
+                cin >> pizzamenu;
+                pizzaMenu.push_back(pizzamenu);
+            }
+        }
+        menurepo.storePizzaMenu(pizzaMenu);
+
+    }
 }
+

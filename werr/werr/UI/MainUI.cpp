@@ -18,6 +18,7 @@ void MainUI::startUI() {
         cout << "D - Delivery " << endl;
         cout << "Q - quit" << endl;
 
+        char select;
         cin >> select;
 
         UmsjonUI umsjonui;
@@ -37,6 +38,7 @@ void MainUI::startUI() {
             case 'd':
                 cout << "vantar" << endl;
                 break;
+
             default:
                 break;
         }

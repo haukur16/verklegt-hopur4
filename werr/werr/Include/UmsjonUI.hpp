@@ -13,6 +13,7 @@ class UmsjonUI {
 private:
     UmsjonRepo topprepo;
     UmsjonRepo stuffrepo;
+    UmsjonRepo menurepo;
 public:
     UmsjonUI();
     void startUI();
