@@ -11,7 +11,7 @@
 #include <iostream>
 
 PizzaMenu::PizzaMenu() {
-    
+
 }
 
 
@@ -32,12 +32,12 @@ string PizzaMenu::gettopping() {
 
 void PizzaMenu::write(ofstream& fout) const {
     int stringlength = name.length() +1;
-    
+
     fout.write((char*)(&stringlength), sizeof(int));
     fout.write(name.c_str(), stringlength);
-    
+
     int stringlength2 = pizzaTopp.length() +1;
-    
+
     fout.write((char*)(&stringlength2), sizeof(int));
     fout.write(pizzaTopp.c_str(), stringlength2);
     fout.write((char*)(&price), sizeof(double));
@@ -45,23 +45,23 @@ void PizzaMenu::write(ofstream& fout) const {
 
 void PizzaMenu::read(ifstream& fin) {
     int stringlength;
-    
+
     fin.read((char*)(&stringlength), sizeof(int));
     char *str = new char[stringlength];
-    
+
     fin.read(str, stringlength);
-    
+
     name = str;
     int stringlength2;
-    
+
     fin.read((char*)(&stringlength2), sizeof(int));
     char *str2 = new char[stringlength2];
-    
+
     fin.read(str, stringlength2);
-    
+
     pizzaTopp = str2;
     fin.read((char*)(&price), sizeof(double));
-    
+
     delete [] str;
 }
 istream& operator >> (istream& in, PizzaMenu& menu) {
@@ -84,7 +84,7 @@ istream& operator >> (istream& in, PizzaMenu& menu) {
     return in;
 }
 ostream& operator << (ostream& out, const PizzaMenu& menu) {
-    for (int i=0; i<menu.pizzaTopp.size(); i++) {
+    for (unsigned int i=0; i<menu.pizzaTopp.size(); i++) {
         cout << "Topping " << i+1 << ": ";
         out << menu.pizzaTopp[i];
     }
