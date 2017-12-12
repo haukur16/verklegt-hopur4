@@ -13,26 +13,20 @@
 PizzaMenu::PizzaMenu() {
     
 }
-void PizzaMenu::setname(string n) {
-    name = n;
+
+PizzaMenu::PizzaMenu(string n, double p, string t) {
+    this ->name = n;
+    this ->price = p;
+    this ->pizzaTopp = t;
 }
-
-
 string PizzaMenu::getname() {
-    return this -> name;
+    return this->name;
 }
-void PizzaMenu::setprice(double p) {
-    price = p;
-}
-
 double PizzaMenu::getprice() {
-    return this -> price;
+    return this->price;
 }
-void PizzaMenu::settoppings(string t) {
-    toppings = t;
-}
-string PizzaMenu::gettoppings() {
-    return this -> toppings;
+string PizzaMenu::gettopping() {
+    return this->pizzaTopp;
 }
 void PizzaMenu::write(ofstream& fout) const {
     int stringlength = name.length() +1;
@@ -40,10 +34,10 @@ void PizzaMenu::write(ofstream& fout) const {
     fout.write((char*)(&stringlength), sizeof(int));
     fout.write(name.c_str(), stringlength);
     
-    int stringlength2 = toppings.length() +1;
+    int stringlength2 = pizzaTopp.length() +1;
     
     fout.write((char*)(&stringlength2), sizeof(int));
-    fout.write(toppings.c_str(), stringlength2);
+    fout.write(pizzaTopp.c_str(), stringlength2);
     fout.write((char*)(&price), sizeof(double));
 }
 
@@ -56,35 +50,43 @@ void PizzaMenu::read(ifstream& fin) {
     fin.read(str, stringlength);
     
     name = str;
+    int stringlength2;
     
+    fin.read((char*)(&stringlength2), sizeof(int));
+    char *str2 = new char[stringlength2];
+    
+    fin.read(str, stringlength2);
+    
+    pizzaTopp = str2;
     fin.read((char*)(&price), sizeof(double));
     
     delete [] str;
 }
-
-istream& operator >>(istream& in, PizzaMenu& menu) {
+istream& operator >> (istream& in, PizzaMenu& menu) {
+    cout << "Input toppings, 0 for no more ";
+    string select;
+    for (int i=0; i<10; i++) {
+        cout << "Another ? ";
+        cin >> select;
+        if (select == "y") {
+            in >> menu.pizzaTopp[i];
+        }
+        else if (select != "y") {
+            break;
+        }
+    }
     cout << "Input pizza name: ";
     in >> menu.name;
-    int many;
-    cout << "How many toppings do you want ?";
-    cin >> many;
-    for (int i=0; i<many; i++) {
-        cout << "Topping " << i++ << ": ";
-        in >> menu.toppings[i];
-    }
-    cout << "Input pizza price: ";
+    cout << "Input price of pizza: ";
     in >> menu.price;
-    
-    
     return in;
 }
-
 ostream& operator << (ostream& out, const PizzaMenu& menu) {
-    out << menu.name << endl;
-    for (int i=0; i<menu.toppings.size(); i++) {
-        cout << "Topping " << i++ << ": ";
-        out << menu.toppings[i];
+    for (int i=0; i<menu.pizzaTopp.size(); i++) {
+        cout << "Topping " << i+1 << ": ";
+        out << menu.pizzaTopp[i];
     }
-    out <<menu.price << endl;
+    out << menu.name << endl;
+    out << menu.price << endl;
     return out;
 }
