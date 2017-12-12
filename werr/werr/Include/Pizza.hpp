@@ -12,22 +12,23 @@
 #include <vector>
 #include <iostream>
 #include "Topping.hpp"
+#include "Other_stuff.hpp"
 using namespace std;
 
 class Pizza {
 public:
     Pizza();
-    void setTotal(double total);
-    double getname();
     void addTopping(Topping topping);
+    void addOtherStuff(Other_stuff otherStuff);
     void write(ofstream& fout) const;
     void read(ifstream& fin);
     friend istream& operator >> (istream& in, Pizza& pizza);
     friend ostream& operator << (ostream& out, const Pizza& pizza);
 private:
+    vector<Other_stuff> other_stuff;
     vector<Topping> toppings;
     friend class Pizza;
-    double total;
     
+    friend class Topping;
 };
 #endif /* Pizza_hpp */

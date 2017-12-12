@@ -27,6 +27,7 @@ void UmsjonUI::startUI () {
     cout << "t: add toppings" << endl;
     cout << "o: add other products" << endl;
     cout << "p: add to Pizza Menu " << endl;
+    cout << "b: add base and sizea" << endl;
 
     cin >> select;
 
@@ -98,6 +99,28 @@ void UmsjonUI::startUI () {
         menurepo.storePizzaMenu(pizzaMenu);
 
 
+    }
+    else if (select == 'b') {
+        vector<PizzaType> pizzaType = typerepo.retrivePizaType();
+        
+        cout << "These are the current items in the system: " << endl;
+        for (unsigned int i = 0; i < pizzaType.size(); i++) {
+            cout << "[" << i+1 << "]" << pizzaType[i];
+        }
+        
+        char select = 'y';
+        PizzaType pizzatype;
+        while(select == 'y') {
+            cout << endl;
+            
+            cout << "Add another item (y/n)? ";
+            cin >> select;
+            if (select == 'y') {
+                cin >> pizzatype;
+                pizzaType.push_back(pizzatype);
+            }
+        }
+        typerepo.storePizzaType(pizzaType);
     }
 }
 

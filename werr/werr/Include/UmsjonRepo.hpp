@@ -13,6 +13,7 @@
 #include "Topping.hpp"
 #include "Other_stuff.hpp"
 #include "PizzaMenu.hpp"
+#include "PizzaType.hpp"
 
 using namespace std;
 
@@ -26,6 +27,9 @@ public:
     void storeAllOtherStuff(const vector<Other_stuff> &other_stuff);
     vector<PizzaMenu> retrivePizzaMenu();
     void storePizzaMenu(const vector<PizzaMenu> &pizzaMenu);
+    vector<PizzaType> retrivePizaType();
+    void storePizzaType(const vector<PizzaType> &pizzaType);
+    
 private:
 
 };

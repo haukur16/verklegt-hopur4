@@ -25,6 +25,7 @@ void SalaRepo::storePizza(const Pizza& pizza) {
 
 Pizza SalaRepo::retrievePizza() {
     ifstream fin;
+
     fin.open("pizza.bin", ios::binary);
 
     if (fin.is_open()) {
@@ -38,20 +39,3 @@ Pizza SalaRepo::retrievePizza() {
     throw FileNotFoundException();
 }
 
-Topping SalaRepo::retrieveprice() {
-    ifstream fin;
-    fin.open("pizza.bin", ios::binary);
-    
-    if (fin.is_open()) {
-        Topping price;
-        
-        price.read(fin);
-
-        if (price.getprice() == true) {
-            price.read(fin);
-        }
-        fin.close();
-        return price;
-    }
-    throw FileNotFoundException();
-}

@@ -117,3 +117,37 @@ void UmsjonRepo::storePizzaMenu(const vector<PizzaMenu> &pizzaMenu) {
     }
     fout.close();
 }
+
+vector<PizzaType> UmsjonRepo::retrivePizaType() {
+    vector<PizzaType> pizzaType;
+    PizzaType pizzatype;
+    ifstream fin;
+    fin.open("pizza_type.bin", ios::binary);
+    
+    if(fin.is_open()) {
+        int pizzaTypecount;
+        
+        fin.read((char*)(&pizzaTypecount), sizeof(int));
+        
+        for (int i=0; i<pizzaTypecount; i++) {
+            pizzatype.read(fin);
+            pizzaType.push_back(pizzatype);
+        }
+        fin.close();
+    }
+    return pizzaType;
+}
+void UmsjonRepo::storePizzaType(const vector<PizzaType> &pizzaType) {
+    ofstream fout;
+    fout.open("pizza_type.bin", ios::binary);
+    
+    int pizzaTypecount = pizzaType.size();
+    
+    fout.write((char*)(&pizzaTypecount), sizeof(int));
+    
+    for (int i=0; i<pizzaTypecount; i++) {
+        pizzaType[i].write(fout);
+    }
+    fout.close();
+}
+
