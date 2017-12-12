@@ -51,7 +51,7 @@ void UmsjonUI::startUI () {
             }
         }
         topprepo.storeAllToppings(toppings);
-        
+
     }
     else if(select == 'o'){
         vector<Other_stuff> other_stuff = stuffrepo.retriveAllOtherStuff();
@@ -97,6 +97,7 @@ void UmsjonUI::startUI () {
             }
         }
         menurepo.storePizzaMenu(pizzaMenu);
+
 
     }
 }

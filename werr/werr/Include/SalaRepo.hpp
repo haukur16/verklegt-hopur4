@@ -19,6 +19,7 @@ public:
     
     void storePizza(const Pizza& pizza);
     Pizza retrievePizza();
+    Topping retrieveprice();
 };
 
 #endif /* SalaRepo_hpp */

@@ -39,7 +39,7 @@ void SalaUI::startUI() {
             }
             cin >> toppingselection;
 
-            if (toppingselection > 0 && toppingselection <= (int)toppings.size()) {
+            if (toppingselection > 0 && toppingselection <= (double)toppings.size()) {
                 pizza.addTopping(toppings[toppingselection - 1]);
             }
         }

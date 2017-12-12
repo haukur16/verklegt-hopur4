@@ -17,6 +17,8 @@ using namespace std;
 class Pizza {
 public:
     Pizza();
+    void setTotal(double total);
+    double getname();
     void addTopping(Topping topping);
     void write(ofstream& fout) const;
     void read(ifstream& fin);
@@ -24,7 +26,8 @@ public:
     friend ostream& operator << (ostream& out, const Pizza& pizza);
 private:
     vector<Topping> toppings;
-    friend class Topping;
+    friend class Pizza;
+    double total;
     
 };
 #endif /* Pizza_hpp */

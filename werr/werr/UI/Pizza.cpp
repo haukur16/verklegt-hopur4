@@ -14,6 +14,14 @@ Pizza::Pizza() {
     
 }
 
+void Pizza::setTotal(double t) {
+    total = t;
+}
+
+double Pizza::getname() {
+    return this -> total;
+}
+
 void Pizza::addTopping(Topping topping) {
     toppings.push_back(topping);
 }
@@ -36,6 +44,7 @@ void Pizza::read(ifstream& fin) {
         addTopping(topping);
     }
 }
+
 istream& operator >> (istream& in, Pizza& pizza) {
     int toppingcount;
     in >> toppingcount;
@@ -51,6 +60,7 @@ ostream& operator << (ostream& out, const Pizza& pizza) {
     
     for (unsigned int i=0; i<pizza.toppings.size(); i++) {
         out << pizza.toppings[i];
+        out << pizza.total;
     }
     return out;
 }
