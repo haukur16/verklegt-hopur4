@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <string>
+#include <vector>
 using namespace std;
 class PizzaType {
 private:
@@ -29,5 +30,6 @@ public:
     void read(ifstream& fin);
     friend istream& operator >>(istream& in, PizzaType& type);
     friend ostream& operator << (ostream& out, const PizzaType& type);
+
 };
 #endif /* PizzaType_hpp */

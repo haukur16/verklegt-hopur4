@@ -26,6 +26,9 @@ public:
     void read(ifstream& fin);
     friend istream& operator >> (istream& in, Pizza& pizza);
     friend ostream& operator << (ostream& out, const Pizza& pizza);
+    vector<Topping> getTopping();
+    vector<PizzaType> getType();
+    vector<Other_stuff> othStuff();
 private:
     vector<Other_stuff> other_stuff;
     vector<PizzaType> pizzaType;

@@ -12,7 +12,7 @@
 #include "Topping.hpp"
 #include "Pizza.hpp"
 #include "Other_stuff.hpp"
-
+#include "TotalPrice.hpp"
 using namespace std;
 
 SalaUI::SalaUI() {
@@ -45,6 +45,16 @@ void SalaUI::startUI() {
                 pizza.addTopping(toppings[toppingselection - 1]);
             }
         }
+        for (int i = 0; i<1; i++) {
+            cout << "Please enter ID for pizza type and size (0 for no more)" << endl;
+            for (unsigned int i=0; i<pizzatype.size(); i++) {
+                cout << "[" << i+1 << "]" << pizzatype[i];
+            }
+            cin >> pizzaTypeSelection;
+            if (pizzaTypeSelection > 0 && pizzaTypeSelection <= (int)pizzatype.size()) {
+                pizza.addType(pizzatype[pizzaTypeSelection - 1]);
+            }
+        }
         while (otherStuffSelection != 0) {
             cout << "Please enter ID for other products to add (0 for no more)" << endl;
             for (unsigned int i=0; i<other_stuff.size(); i++) {
@@ -53,16 +63,6 @@ void SalaUI::startUI() {
             cin >> otherStuffSelection;
             if (otherStuffSelection > 0 && otherStuffSelection <= (int)other_stuff.size()) {
                 pizza.addOtherStuff(other_stuff[otherStuffSelection - 1]);
-            }
-        }
-        while (pizzaTypeSelection != 0) {
-            cout << "Please enter ID for pizza type and size (0 for no more)" << endl;
-            for (unsigned int i=0; i<pizzatype.size(); i++) {
-                cout << "[" << i+1 << "]" << pizzatype[i];
-            }
-            cin >> pizzaTypeSelection;
-            if (pizzaTypeSelection > 0 && pizzaTypeSelection <= (int)pizzatype.size()) {
-                pizza.addType(pizzatype[pizzaTypeSelection - 1]);
             }
         }
 
@@ -74,6 +74,18 @@ void SalaUI::startUI() {
             try {
                 Pizza pizza = pizzarepo.retrievePizza();
                 cout << pizza;
+                TotalPrice price;
+                double totalp = 0.0;
+                double totalb = 0.0;
+                totalp = price.toppingPrice(pizza);
+                totalb = price.typePrice(pizza);
+                cout << "========================" << endl;
+                cout << "Price for pizza: " << totalp+totalb << endl;
+                double totalo = 0.0;
+                totalo = price.otherPrice(pizza);
+                cout << "Price for extra: " << totalo << endl;
+                cout << "========================" << endl;
+                cout << "Total price: " << totalo+totalp+totalb << endl;
                 cout << endl;
                 
             }

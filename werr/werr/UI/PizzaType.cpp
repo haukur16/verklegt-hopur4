@@ -57,14 +57,29 @@ void PizzaType::read(ifstream& fin) {
 istream& operator >>(istream& in, PizzaType& type) {
     cout << "Input base: ";
     in >> type.base;
-    cout << "Input size (in inches): ";
-    in >> type.size;
-    cout << "Input base price: ";
+    while (true) {
+        cout << "Input size (1: small, 2: medium, 3: large) ";
+        in >> type.size;
+        if (type.size >0 && type.size<4) {
+            break;
+        }
+    }
+    cout << "Input price";
     in >> type.price;
-    
     return in;
 }
 ostream& operator << (ostream& out, const PizzaType& type) {
-    out << type.base << " " << type.size << " inches " << type.price << " kr." << endl;
+    out << type.base << " ";
+    if (type.size == 1) {
+        out << "small";
+    }
+    else if (type.size == 2) {
+        out << "medium";
+    }
+    else if (type.size == 3) {
+        out << "large";
+    }
+    out << " " << type.price << " kr." << endl;
     return out;
 }
+
