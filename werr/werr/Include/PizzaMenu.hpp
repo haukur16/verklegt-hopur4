@@ -17,6 +17,7 @@ private:
     string name;
     double price;
     string pizzaTopp;
+    
 public:
     PizzaMenu();
     PizzaMenu(string name, double price, string pizzaTopp);

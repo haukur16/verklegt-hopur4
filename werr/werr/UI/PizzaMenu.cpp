@@ -14,6 +14,7 @@ PizzaMenu::PizzaMenu() {
     
 }
 
+
 PizzaMenu::PizzaMenu(string n, double p, string t) {
     this ->name = n;
     this ->price = p;
@@ -28,6 +29,7 @@ double PizzaMenu::getprice() {
 string PizzaMenu::gettopping() {
     return this->pizzaTopp;
 }
+
 void PizzaMenu::write(ofstream& fout) const {
     int stringlength = name.length() +1;
     
