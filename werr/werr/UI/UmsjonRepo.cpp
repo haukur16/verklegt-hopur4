@@ -48,7 +48,6 @@ vector<Topping> UmsjonRepo::retriveAllToppings() {
         fin.close();
     }
     return toppings;
-
 }
 
 vector<Other_stuff> UmsjonRepo::retriveAllOtherStuff() {
