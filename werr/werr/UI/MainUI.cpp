@@ -15,9 +15,9 @@ void MainUI::startUI() {
         cout << "M - Manager" << endl;
         cout << "S - Salesman" << endl;
         cout << "B - Baker" << endl;
-        cout << "d - Delivery " << endl;
-        cout << "q - quit" << endl;
-        
+        cout << "D - Delivery " << endl;
+        cout << "Q - quit" << endl;
+
         char select;
         cin >> select;
 
