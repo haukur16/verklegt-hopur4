@@ -15,6 +15,8 @@ private:
     UmsjonRepo topprepo;
     SalaRepo pizzarepo;
     UmsjonRepo stuffrepo;
+    UmsjonRepo typerepo;
+    
 public:
     SalaUI();
     void startUI();

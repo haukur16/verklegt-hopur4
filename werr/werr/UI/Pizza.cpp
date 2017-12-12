@@ -24,6 +24,10 @@ void Pizza::addOtherStuff(Other_stuff otherStuff) {
     other_stuff.push_back(otherStuff);
 }
 
+void Pizza::addType(PizzaType pizzatype) {
+    pizzaType.push_back(pizzatype);
+    
+}
 void Pizza::write(ofstream& fout) const {
     int tcount = toppings.size();
     fout.write((char*)(&tcount), sizeof(int));
@@ -35,6 +39,12 @@ void Pizza::write(ofstream& fout) const {
     fout.write((char*)(&oscount), sizeof(int));
     for(int i = 0; i<oscount; i++) {
         other_stuff[i].write(fout);
+    }
+    
+    int btcount = pizzaType.size();
+    fout.write((char*)(&btcount), sizeof(int));
+    for(int i = 0; i<btcount; i++) {
+        pizzaType[i].write(fout);
     }
 }
 void Pizza::read(ifstream& fin) {
@@ -51,6 +61,13 @@ void Pizza::read(ifstream& fin) {
     for (int i = 0; i < oscount; i++) {
         otherStuff.read(fin);
         addOtherStuff(otherStuff);
+    }
+    int btcount;
+    fin.read((char*)(&btcount), sizeof(int));
+    PizzaType pizzatype;
+    for (int i = 0; i < btcount; i++) {
+        pizzatype.read(fin);
+        addType(pizzatype);
     }
 }
 
@@ -69,6 +86,13 @@ istream& operator >> (istream& in, Pizza& pizza) {
         in >> otherStuff;
         pizza.addOtherStuff(otherStuff);
     }
+    int typeCount;
+    in >> typeCount;
+    PizzaType pizzatype;
+    for (unsigned int i = 0; i<pizza.pizzaType.size(); i++) {
+        in >> pizzatype;
+        pizza.addType(pizzatype);
+    }
     return in;
 }
 ostream& operator << (ostream& out, const Pizza& pizza) {
@@ -79,6 +103,10 @@ ostream& operator << (ostream& out, const Pizza& pizza) {
     out << "Other products:" << endl;
     for (unsigned int i=0; i<pizza.other_stuff.size(); i++) {
         out << pizza.other_stuff[i];
+    }
+    out << "Pizza type and size" << endl;
+    for (unsigned int i=0; i<pizza.pizzaType.size(); i++) {
+        out << pizza.pizzaType[i];
     }
     return out;
 }

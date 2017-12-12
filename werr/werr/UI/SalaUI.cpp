@@ -30,9 +30,11 @@ void SalaUI::startUI() {
     if (select == 'm') {
         vector<Topping> toppings = topprepo.retriveAllToppings();
         vector<Other_stuff> other_stuff = stuffrepo.retriveAllOtherStuff();
+        vector<PizzaType> pizzatype = typerepo.retrivePizaType();
         Pizza pizza;
         int toppingselection = -1;
         int otherStuffSelection = -1;
+        int pizzaTypeSelection = -1;
         while (toppingselection != 0) {
             cout << "Please enter ID for toppings to add (0 for no more)" << endl;
             for (unsigned int i=0; i<toppings.size(); i++) {
@@ -51,6 +53,16 @@ void SalaUI::startUI() {
             cin >> otherStuffSelection;
             if (otherStuffSelection > 0 && otherStuffSelection <= (int)other_stuff.size()) {
                 pizza.addOtherStuff(other_stuff[otherStuffSelection - 1]);
+            }
+        }
+        while (pizzaTypeSelection != 0) {
+            cout << "Please enter ID for pizza type and size (0 for no more)" << endl;
+            for (unsigned int i=0; i<pizzatype.size(); i++) {
+                cout << "[" << i+1 << "]" << pizzatype[i];
+            }
+            cin >> pizzaTypeSelection;
+            if (pizzaTypeSelection > 0 && pizzaTypeSelection <= (int)pizzatype.size()) {
+                pizza.addType(pizzatype[pizzaTypeSelection - 1]);
             }
         }
 
