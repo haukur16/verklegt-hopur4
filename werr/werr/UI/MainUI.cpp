@@ -12,12 +12,15 @@ void MainUI::startUI() {
     char select = '\0';
 
     while(select != 'q') {
-        cout << "M - Manager" << endl;
-        cout << "S - Salesman" << endl;
-        cout << "B - Baker" << endl;
-        cout << "D - Delivery " << endl;
-        cout << "Q - quit" << endl;
-        cout << "===============" << endl;
+        cout << "==========================" << endl;
+        cout << "What are you? " << endl;
+        cout << "==========================" << endl;
+        cout << "M - Manager" << "| S - Salesman" << endl;
+        cout << "--------------------------" << endl;
+        cout << "B - Baker" << "  | D - Delivery " << endl;
+        cout << "--------------------------" << endl;
+        cout << "Q - quit   |" << endl;
+        cout << "==========================" << endl;
 
         char select;
         cin >> select;

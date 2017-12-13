@@ -24,13 +24,16 @@ UmsjonUI::UmsjonUI() {
 
 void UmsjonUI::startUI () {
     char select = '\0';
+    cout << "===================================" << endl;
+    cout << "What do you want to add?" << endl;
+    cout << "===================================" << endl;
 
-    cout << "t: add toppings" << endl;
-    cout << "o: add other products" << endl;
-    cout << "p: add to Pizza Menu " << endl;
-    cout << "b: add base and sizea" << endl;
-    cout << "l: add pizza places" << endl;
-    cout << "===============" << endl;
+    cout << "T: Toppings" << "     | O: Other products" << endl;
+    cout << "-----------------------------------" << endl;
+    cout << "P: Pizza Menu " << "  | B: Base and size" << endl;
+    cout << "-----------------------------------" << endl;
+    cout << "L: Pizza places |" << endl;
+    cout << "===================================" << endl;
 
     cin >> select;
 
