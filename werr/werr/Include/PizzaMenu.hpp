@@ -11,19 +11,19 @@
 
 #include <stdio.h>
 #include <string>
+
 using namespace std;
 class PizzaMenu {
 private:
     string name;
     double price;
-    string pizzaTopp;
+
     
 public:
     PizzaMenu();
-    PizzaMenu(string name, double price, string pizzaTopp);
+    PizzaMenu(string name, double price);
     string getname();
     double getprice();
-    string gettopping();
     void write(ofstream& fout) const;
     void read(ifstream& fin);
     friend istream& operator >> (istream& in, PizzaMenu& menu);

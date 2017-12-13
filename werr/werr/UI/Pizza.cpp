@@ -28,6 +28,10 @@ void Pizza::addType(PizzaType pizzatype) {
     pizzaType.push_back(pizzatype);
     
 }
+void Pizza::addPlace(PizzaPlace pizzaplace) {
+    pizzaPlace.push_back(pizzaplace);
+}
+
 void Pizza::write(ofstream& fout) const {
     int tcount = toppings.size();
     fout.write((char*)(&tcount), sizeof(int));
@@ -46,7 +50,11 @@ void Pizza::write(ofstream& fout) const {
     for(int i = 0; i<oscount; i++) {
         other_stuff[i].write(fout);
     }
-    
+    int pcount = pizzaPlace.size();
+    fout.write((char*)(&pcount), sizeof(int));
+    for(int i = 0; i<pcount; i++) {
+        pizzaPlace[i].write(fout);
+    }
     
 }
 void Pizza::read(ifstream& fin) {
@@ -73,6 +81,13 @@ void Pizza::read(ifstream& fin) {
         otherStuff.read(fin);
         addOtherStuff(otherStuff);
     }
+    int pcount;
+    fin.read((char*)(&pcount), sizeof(int));
+    PizzaPlace pizzaplace;
+    for (int i = 0; i < pcount; i++) {
+        pizzaplace.read(fin);
+        addPlace(pizzaplace);
+    }
     
 }
 
@@ -98,6 +113,13 @@ istream& operator >> (istream& in, Pizza& pizza) {
         in >> otherStuff;
         pizza.addOtherStuff(otherStuff);
     }
+    int placeCount;
+    in >> placeCount;
+    PizzaPlace pizzaplace;
+    for (unsigned int i = 0; i<pizza.pizzaPlace.size(); i++) {
+        in >> pizzaplace;
+        pizza.addPlace(pizzaplace);
+    }
 
     return in;
 }
@@ -106,15 +128,20 @@ ostream& operator << (ostream& out, const Pizza& pizza) {
     for (unsigned int i=0; i<pizza.toppings.size(); i++) {
         out << "Topping " << i+1 << ": " << pizza.toppings[i];
     }
-    cout << "-----------------------" << endl;
+    cout << "------------------------" << endl;
     out << "Pizza type and size" << endl;
     for (unsigned int i=0; i<pizza.pizzaType.size(); i++) {
         out << pizza.pizzaType[i];
     }
-    cout << "-----------------------" << endl;
+    cout << "------------------------" << endl;
     out << "Other products:" << endl;
     for (unsigned int i=0; i<pizza.other_stuff.size(); i++) {
         out << pizza.other_stuff[i];
+    }
+    cout << "------------------------" << endl;
+    out << "Pizza Place:" << endl;
+    for (unsigned int i=0; i<pizza.pizzaPlace.size(); i++) {
+        out << pizza.pizzaPlace[i];
     }
     return out;
 }

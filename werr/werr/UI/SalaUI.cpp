@@ -13,6 +13,7 @@
 #include "Pizza.hpp"
 #include "Other_stuff.hpp"
 #include "TotalPrice.hpp"
+#include "PizzaPlace.hpp"
 using namespace std;
 
 SalaUI::SalaUI() {
@@ -31,10 +32,12 @@ void SalaUI::startUI() {
         vector<Topping> toppings = topprepo.retriveAllToppings();
         vector<Other_stuff> other_stuff = stuffrepo.retriveAllOtherStuff();
         vector<PizzaType> pizzatype = typerepo.retrivePizaType();
+        vector<PizzaPlace> pizzaplace = placerepo.retrivePizzPlace();
         Pizza pizza;
         int toppingselection = -1;
         int otherStuffSelection = -1;
         int pizzaTypeSelection = -1;
+        int pizzaPlaceSelection = -1;
         while (toppingselection != 0) {
             cout << "Please enter ID for toppings to add (0 for no more)" << endl;
             for (unsigned int i=0; i<toppings.size(); i++) {
@@ -63,6 +66,16 @@ void SalaUI::startUI() {
             cin >> otherStuffSelection;
             if (otherStuffSelection > 0 && otherStuffSelection <= (int)other_stuff.size()) {
                 pizza.addOtherStuff(other_stuff[otherStuffSelection - 1]);
+            }
+        }
+        for (int i = 0; i<1; i++) {
+            cout << "Please enter ID for pizza Pizza Place" << endl;
+            for (unsigned int i=0; i<pizzaplace.size(); i++) {
+                cout << "[" << i+1 << "]" << pizzaplace[i];
+            }
+            cin >> pizzaPlaceSelection;
+            if (pizzaPlaceSelection > 0 && pizzaPlaceSelection <= (int)pizzaplace.size()) {
+                pizza.addPlace(pizzaplace[pizzaPlaceSelection - 1]);
             }
         }
 

@@ -14,6 +14,7 @@
 #include "Topping.hpp"
 #include "Other_stuff.hpp"
 #include "PizzaType.hpp"
+#include "PizzaPlace.hpp"
 using namespace std;
 
 class Pizza {
@@ -22,6 +23,7 @@ public:
     void addTopping(Topping topping);
     void addOtherStuff(Other_stuff otherStuff);
     void addType(PizzaType pizzaType);
+    void addPlace(PizzaPlace pizzaplace);
     void write(ofstream& fout) const;
     void read(ifstream& fin);
     friend istream& operator >> (istream& in, Pizza& pizza);
@@ -33,6 +35,7 @@ private:
     vector<Other_stuff> other_stuff;
     vector<PizzaType> pizzaType;
     vector<Topping> toppings;
+    vector<PizzaPlace> pizzaPlace;
     friend class Pizza;
     
     friend class Topping;

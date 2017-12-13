@@ -10,6 +10,7 @@
 #include "Topping.hpp"
 #include "Other_stuff.hpp"
 #include "PizzaMenu.hpp"
+#include "MenuTopp.hpp"
 
 #include <vector>
 #include <iostream>
@@ -28,6 +29,7 @@ void UmsjonUI::startUI () {
     cout << "o: add other products" << endl;
     cout << "p: add to Pizza Menu " << endl;
     cout << "b: add base and sizea" << endl;
+    cout << "l: add pizza places" << endl;
 
     cin >> select;
 
@@ -76,8 +78,8 @@ void UmsjonUI::startUI () {
         }
         stuffrepo.storeAllOtherStuff(other_stuff);
     }
-    else if (select == 'p') {
-        vector<PizzaMenu> pizzaMenu = menurepo.retrivePizzaMenu();
+/*/    else if (select == 'p') {
+        vector<MenuTopp> menuTopp = menurepo.retrivePizzaMenu();
 
         cout << "These are the current items on the menu: " << endl;
         for (unsigned int i = 0; i < pizzaMenu.size(); i++) {
@@ -85,21 +87,21 @@ void UmsjonUI::startUI () {
         }
 
         char select = 'y';
-        PizzaMenu pizzamenu;
+        MenuTopp menutopp;
         while(select == 'y') {
             cout << endl;
 
             cout << "Add another item (y/n)? ";
             cin >> select;
             if (select == 'y') {
-                cin >> pizzamenu;
+                cin >> menutopp;
                 pizzaMenu.push_back(pizzamenu);
             }
         }
         menurepo.storePizzaMenu(pizzaMenu);
 
-
     }
+ /*/
     else if (select == 'b') {
         vector<PizzaType> pizzaType = typerepo.retrivePizaType();
         
@@ -121,6 +123,29 @@ void UmsjonUI::startUI () {
             }
         }
         typerepo.storePizzaType(pizzaType);
+    }
+    
+    else if (select == 'l') {
+        vector<PizzaPlace> pizzaPlace = placerepo.retrivePizzPlace();
+        
+        cout << "These are the current Pizza Places in the system: " << endl;
+        for (unsigned int i = 0; i < pizzaPlace.size(); i++) {
+            cout << "[" << i+1 << "]" << pizzaPlace[i];
+        }
+        
+        char select = 'y';
+        PizzaPlace pizzaplace;
+        while(select == 'y') {
+            cout << endl;
+            
+            cout << "Add another item (y/n)? ";
+            cin >> select;
+            if (select == 'y') {
+                cin >> pizzaplace;
+                pizzaPlace.push_back(pizzaplace);
+            }
+        }
+        placerepo.storePizzaPlace(pizzaPlace);
     }
 }
 

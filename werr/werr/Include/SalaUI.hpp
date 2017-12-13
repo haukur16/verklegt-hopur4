@@ -10,12 +10,14 @@
 #define SalaUI_hpp
 #include "UmsjonRepo.hpp"
 #include "SalaRepo.hpp"
+
 class SalaUI {
 private:
     UmsjonRepo topprepo;
     SalaRepo pizzarepo;
     UmsjonRepo stuffrepo;
     UmsjonRepo typerepo;
+    UmsjonRepo placerepo;
     
 public:
     SalaUI();

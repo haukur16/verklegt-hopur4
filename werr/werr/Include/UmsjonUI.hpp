@@ -15,6 +15,7 @@ private:
     UmsjonRepo stuffrepo;
     UmsjonRepo menurepo;
     UmsjonRepo typerepo;
+    UmsjonRepo placerepo;
 public:
     UmsjonUI();
     void startUI();

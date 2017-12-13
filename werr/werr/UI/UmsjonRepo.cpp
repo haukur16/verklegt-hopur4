@@ -84,7 +84,7 @@ void UmsjonRepo::storeAllOtherStuff(const vector<Other_stuff> &other_stuff) {
     fout.close();
 }
 
-vector<PizzaMenu> UmsjonRepo::retrivePizzaMenu() {
+/*/vector<PizzaMenu> UmsjonRepo::retrivePizzaMenu() {
     vector<PizzaMenu> pizzaMenu;
     PizzaMenu pizzamenu;
     
@@ -118,6 +118,39 @@ void UmsjonRepo::storePizzaMenu(const vector<PizzaMenu> &pizzaMenu) {
     fout.close();
 }
 
+vector<MenuTopp> UmsjonRepo::retriveMenuTopp() {
+    vector<MenuTopp> menuTopp;
+    MenuTopp menutopp;
+    ifstream fin;
+    fin.open("pizza_menu.bin", ios::binary);
+    
+    if(fin.is_open()) {
+        int menuToppcount;
+        
+        fin.read((char*)(&menuToppcount), sizeof(int));
+        
+        for (int i=0; i<menuToppcount; i++) {
+            menutopp.read(fin);
+            menuTopp.push_back(menutopp);
+        }
+        fin.close();
+    }
+    return menuTopp;
+}
+void UmsjonRepo::menuTopp(const vector<MenuTopp> &menuTopp) {
+    ofstream fout;
+    fout.open("pizza_menu.bin", ios::binary);
+    
+    int menuToppcount = menuTopp.size();
+    
+    fout.write((char*)(&menuToppcount), sizeof(int));
+    
+    for (int i=0; i<menuToppcount; i++) {
+        menuTopp[i].write(fout);
+    }
+    fout.close();
+}
+/*/
 vector<PizzaType> UmsjonRepo::retrivePizaType() {
     vector<PizzaType> pizzaType;
     PizzaType pizzatype;
@@ -150,4 +183,35 @@ void UmsjonRepo::storePizzaType(const vector<PizzaType> &pizzaType) {
     }
     fout.close();
 }
-
+vector<PizzaPlace> UmsjonRepo::retrivePizzPlace() {
+    vector<PizzaPlace> pizzaPlace;
+    PizzaPlace pizzaplace;
+    ifstream fin;
+    fin.open("pizza_place.bin", ios::binary);
+    
+    if(fin.is_open()) {
+        int pizzaPlacecount;
+        
+        fin.read((char*)(&pizzaPlacecount), sizeof(int));
+        
+        for (int i=0; i<pizzaPlacecount; i++) {
+            pizzaplace.read(fin);
+            pizzaPlace.push_back(pizzaplace);
+        }
+        fin.close();
+    }
+    return pizzaPlace;
+}
+void UmsjonRepo::storePizzaPlace(const vector<PizzaPlace> &pizzaPlace) {
+    ofstream fout;
+    fout.open("pizza_place.bin", ios::binary);
+    
+    int pizzaPlacecount = pizzaPlace.size();
+    
+    fout.write((char*)(&pizzaPlacecount), sizeof(int));
+    
+    for (int i=0; i<pizzaPlacecount; i++) {
+        pizzaPlace[i].write(fout);
+    }
+    fout.close();
+}
