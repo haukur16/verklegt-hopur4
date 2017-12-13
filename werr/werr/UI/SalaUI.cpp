@@ -11,6 +11,7 @@
 #include "SalaUI.hpp"
 #include "Topping.hpp"
 #include "Pizza.hpp"
+#include "OtherOrder.hpp"
 #include "Other_stuff.hpp"
 #include "TotalPrice.hpp"
 #include "PizzaPlace.hpp"
@@ -34,21 +35,33 @@ void SalaUI::startUI() {
         vector<PizzaType> pizzatype = typerepo.retrivePizaType();
         vector<PizzaPlace> pizzaplace = placerepo.retrivePizzPlace();
         Pizza pizza;
+        OtherOrder order;
         int toppingselection = -1;
         int otherStuffSelection = -1;
         int pizzaTypeSelection = -1;
         int pizzaPlaceSelection = -1;
-        while (toppingselection != 0) {
-            cout << "Please enter ID for toppings to add (0 for no more)" << endl;
-            for (unsigned int i=0; i<toppings.size(); i++) {
-                cout << "[" << i+1 << "]" << toppings[i];
+        char select = 'y';
+        while (select == 'y') {
+            cout << "Want to add pizza to order? (y)";
+            cin >> select;
+            if (select == 'y') {
+                do {
+                cout << "Please enter ID for toppings to add (0 for no more)" << endl;
+                for (unsigned int i=0; i<toppings.size(); i++) {
+                    cout << "[" << i+1 << "]" << toppings[i];
+                }
+                cin >> toppingselection;
+                if (toppingselection > 0 && toppingselection <= (int)toppings.size()) {
+                    pizza.addTopping(toppings[toppingselection - 1]);
+                }
+            } while (toppingselection != 0);
+                
             }
-            cin >> toppingselection;
-            if (toppingselection > 0 && toppingselection <= (int)toppings.size()) {
-                pizza.addTopping(toppings[toppingselection - 1]);
+            else {
+                break;
             }
         }
-        for (int i = 0; i<1; i++) {
+            for (int i = 0; i<1; i++) {
             cout << "Please enter ID for pizza type and size (0 for no more)" << endl;
             for (unsigned int i=0; i<pizzatype.size(); i++) {
                 cout << "[" << i+1 << "]" << pizzatype[i];
@@ -58,6 +71,7 @@ void SalaUI::startUI() {
                 pizza.addType(pizzatype[pizzaTypeSelection - 1]);
             }
         }
+
         while (otherStuffSelection != 0) {
             cout << "Please enter ID for other products to add (0 for no more)" << endl;
             for (unsigned int i=0; i<other_stuff.size(); i++) {
@@ -65,7 +79,7 @@ void SalaUI::startUI() {
             }
             cin >> otherStuffSelection;
             if (otherStuffSelection > 0 && otherStuffSelection <= (int)other_stuff.size()) {
-                pizza.addOtherStuff(other_stuff[otherStuffSelection - 1]);
+                order.addOtherStuff(other_stuff[otherStuffSelection - 1]);
             }
         }
         for (int i = 0; i<1; i++) {
@@ -75,18 +89,21 @@ void SalaUI::startUI() {
             }
             cin >> pizzaPlaceSelection;
             if (pizzaPlaceSelection > 0 && pizzaPlaceSelection <= (int)pizzaplace.size()) {
-                pizza.addPlace(pizzaplace[pizzaPlaceSelection - 1]);
+                order.addPlace(pizzaplace[pizzaPlaceSelection - 1]);
             }
         }
 
 
         pizzarepo.storePizza(pizza);
+        pizzarepo.storeOther(order);
         cout << endl;
     }
         else if(select == 'r') {
             try {
                 Pizza pizza = pizzarepo.retrievePizza();
+                OtherOrder other = otherrepo.retrieveOther();
                 cout << pizza;
+                cout << other;
                 TotalPrice price;
                 double totalp = 0.0;
                 double totalb = 0.0;
@@ -95,7 +112,7 @@ void SalaUI::startUI() {
                 cout << "========================" << endl;
                 cout << "Price for pizza: " << totalp+totalb << endl;
                 double totalo = 0.0;
-                totalo = price.otherPrice(pizza);
+                totalo = price.otherPrice(other);
                 cout << "Price for extra: " << totalo << endl;
                 cout << "========================" << endl;
                 cout << "Total price: " << totalo+totalp+totalb << endl;

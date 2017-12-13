@@ -17,6 +17,7 @@ void MainUI::startUI() {
         cout << "B - Baker" << endl;
         cout << "D - Delivery " << endl;
         cout << "Q - quit" << endl;
+        cout << "===============" << endl;
 
         char select;
         cin >> select;
@@ -24,18 +25,18 @@ void MainUI::startUI() {
         UmsjonUI umsjonui;
         SalaUI salaui;
         switch (select) {
-            case 'm':
+            case 'm': case 'M':
                 umsjonui.startUI();
                 cout << endl;
                 break;
-            case 's':
+            case 's': case 'S':
                 salaui.startUI();
                 cout << endl;
                 break;
-            case 'b':
+            case 'b': case 'B':
                 cout << "vantar" << endl;
                 break;
-            case 'd':
+            case 'd': case 'D':
                 cout << "vantar" << endl;
                 break;
 

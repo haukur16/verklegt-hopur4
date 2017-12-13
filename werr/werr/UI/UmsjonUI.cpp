@@ -30,10 +30,11 @@ void UmsjonUI::startUI () {
     cout << "p: add to Pizza Menu " << endl;
     cout << "b: add base and sizea" << endl;
     cout << "l: add pizza places" << endl;
+    cout << "===============" << endl;
 
     cin >> select;
 
-    if (select == 't') {
+    if (select == 't' || select == 'T') {
         vector<Topping> toppings = topprepo.retriveAllToppings();
 
         cout << "These are the current toppings in the system: " << endl;
@@ -56,7 +57,7 @@ void UmsjonUI::startUI () {
         topprepo.storeAllToppings(toppings);
 
     }
-    else if(select == 'o'){
+    else if(select == 'o' || select == 'O'){
         vector<Other_stuff> other_stuff = stuffrepo.retriveAllOtherStuff();
 
         cout << "These are the current items in the system: " << endl;
@@ -102,7 +103,7 @@ void UmsjonUI::startUI () {
 
     }
  /*/
-    else if (select == 'b') {
+    else if (select == 'b' || select == 'B') {
         vector<PizzaType> pizzaType = typerepo.retrivePizaType();
         
         cout << "These are the current items in the system: " << endl;
@@ -125,7 +126,7 @@ void UmsjonUI::startUI () {
         typerepo.storePizzaType(pizzaType);
     }
     
-    else if (select == 'l') {
+    else if (select == 'l' || select == 'L') {
         vector<PizzaPlace> pizzaPlace = placerepo.retrivePizzPlace();
         
         cout << "These are the current Pizza Places in the system: " << endl;

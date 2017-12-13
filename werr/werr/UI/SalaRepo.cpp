@@ -16,7 +16,7 @@ SalaRepo::SalaRepo() {
 
 void SalaRepo::storePizza(const Pizza& pizza) {
     ofstream fout;
-    fout.open("pizza.bin", ios::binary);
+    fout.open("pizza.bin", ios::binary|ios::app);
 
     pizza.write(fout);
 
@@ -39,3 +39,27 @@ Pizza SalaRepo::retrievePizza() {
     throw FileNotFoundException();
 }
 
+void SalaRepo::storeOther(const OtherOrder& other) {
+    ofstream fout;
+    fout.open("other_order.bin", ios::binary|ios::app);
+    
+    other.write(fout);
+    
+    fout.close();
+}
+
+OtherOrder SalaRepo::retrieveOther() {
+    ifstream fin;
+    
+    fin.open("other_order.bin", ios::binary);
+    
+    if (fin.is_open()) {
+        OtherOrder other;;
+        
+        other.read(fin);
+        fin.close();
+        
+        return other;
+    }
+    throw FileNotFoundException();
+}

@@ -25,7 +25,7 @@ double TotalPrice::typePrice(Pizza& type) {
     return totalpr;
 }
 
-double TotalPrice::otherPrice(Pizza& other) {
+double TotalPrice::otherPrice(OtherOrder& other) {
     double totalp;
     for (int i=0; i<other.othStuff().size(); i++) {
         totalp += other.othStuff()[i].getprice();

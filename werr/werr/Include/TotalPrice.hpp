@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "Pizza.hpp"
+#include "OtherOrder.hpp"
 #include "PizzaType.hpp"
 using namespace std;
 class TotalPrice {
@@ -18,7 +19,7 @@ public:
     TotalPrice();
     double toppingPrice(Pizza& pizza);
     double typePrice(Pizza& type);
-    double otherPrice(Pizza& other);
+    double otherPrice(OtherOrder& other);
 private:
 };
 

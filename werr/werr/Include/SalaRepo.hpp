@@ -10,6 +10,7 @@
 #define SalaRepo_hpp
 
 #include "Pizza.hpp"
+#include "OtherOrder.hpp"
 class FileNotFoundException{};
 class SalaRepo {
 private:
@@ -19,6 +20,8 @@ public:
     
     void storePizza(const Pizza& pizza);
     Pizza retrievePizza();
+    void storeOther(const OtherOrder& other);
+    OtherOrder retrieveOther();
 };
 
 #endif /* SalaRepo_hpp */
