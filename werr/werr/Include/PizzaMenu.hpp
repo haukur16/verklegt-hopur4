@@ -15,13 +15,17 @@
 using namespace std;
 class PizzaMenu {
 private:
+    string topping;
     string name;
-    double price;
+    double priceS;
+    double priceM;
+    double priceL;
 
     
 public:
     PizzaMenu();
-    PizzaMenu(string name, double price);
+    PizzaMenu(string name, double priceS, double priceM, double priceL, string topping);
+    string gettopping();
     string getname();
     double getprice();
     void write(ofstream& fout) const;

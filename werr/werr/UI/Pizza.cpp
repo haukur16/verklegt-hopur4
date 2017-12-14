@@ -49,8 +49,8 @@ void Pizza::read(ifstream& fin) {
     for (int i=0; i<tcount; i++) {
         topping.read(fin);
         addTopping(topping);
-        
     }
+    
     int btcount;
     fin.read((char*)(&btcount), sizeof(int));
     PizzaType pizzatype;

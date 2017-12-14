@@ -2,6 +2,7 @@
 #include "MainUI.hpp"
 #include "UmsjonUi.hpp"
 #include "SalaUI.hpp"
+#include "DeliveryUI.hpp"
 using namespace std;
 
 MainUI::MainUI() {
@@ -27,6 +28,7 @@ void MainUI::startUI() {
 
         UmsjonUI umsjonui;
         SalaUI salaui;
+        DeliveryUI deliveryui;
         switch (select) {
             case 'm': case 'M':
                 umsjonui.startUI();
@@ -40,7 +42,8 @@ void MainUI::startUI() {
                 cout << "vantar" << endl;
                 break;
             case 'd': case 'D':
-                cout << "vantar" << endl;
+                deliveryui.startUI();
+                cout << endl;
                 break;
 
             default:

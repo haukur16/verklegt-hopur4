@@ -14,7 +14,6 @@
 #include "Other_stuff.hpp"
 #include "PizzaMenu.hpp"
 #include "PizzaType.hpp"
-#include "MenuTopp.hpp"
 #include "PizzaPlace.hpp"
 
 using namespace std;
@@ -27,10 +26,8 @@ public:
     vector<Topping> retriveAllToppings();
     vector<Other_stuff> retriveAllOtherStuff();
     void storeAllOtherStuff(const vector<Other_stuff> &other_stuff);
-    vector<PizzaMenu> retrivePizzaMenu();
     void storePizzaMenu(const vector<PizzaMenu> &pizzaMenu);
-    //vector<MenuTopp> retriveMenuTopp();
-    //void menuTopp(const vector<MenuTopp> &menuTopp);
+    vector<PizzaMenu> retrivePizzaMenu();
     vector<PizzaType> retrivePizaType();
     void storePizzaType(const vector<PizzaType> &pizzaType);
     vector<PizzaPlace> retrivePizzPlace();

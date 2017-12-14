@@ -25,9 +25,9 @@ public:
     friend istream& operator >> (istream& in, OtherOrder& order);
     friend ostream& operator << (ostream& out, const OtherOrder& order);
     vector<Other_stuff> othStuff();
+    vector<PizzaPlace> pizzaPlace();
 private:
     vector<Other_stuff> other_stuff;
-    vector<PizzaPlace> pizzaPlace;
-    
+    vector<PizzaPlace> pizzaPLace;
 };
 #endif /* OtherOrder_hpp */

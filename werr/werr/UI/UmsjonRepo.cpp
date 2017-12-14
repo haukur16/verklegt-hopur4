@@ -9,6 +9,7 @@
 #include "UmsjonRepo.hpp"
 #include <fstream>
 #include <vector>
+#include <iostream>
 using namespace std;
 
 UmsjonRepo::UmsjonRepo() {
@@ -80,30 +81,11 @@ void UmsjonRepo::storeAllOtherStuff(const vector<Other_stuff> &other_stuff) {
 
     for (int i=0; i<otherStuffcount; i++) {
         other_stuff[i].write(fout);
+        cout << endl;
     }
     fout.close();
 }
 
-/*/vector<PizzaMenu> UmsjonRepo::retrivePizzaMenu() {
-    vector<PizzaMenu> pizzaMenu;
-    PizzaMenu pizzamenu;
-    
-    ifstream fin;
-    fin.open("pizza_menu.bin", ios::binary);
-    
-    if(fin.is_open()) {
-        int pizzaMenucount;
-        
-        fin.read((char*)(&pizzaMenucount), sizeof(int));
-        
-        for (int i=0; i<pizzaMenucount; i++) {
-            pizzamenu.read(fin);
-            pizzaMenu.push_back(pizzamenu);
-        }
-        fin.close();
-    }
-    return pizzaMenu;
-}
 void UmsjonRepo::storePizzaMenu(const vector<PizzaMenu> &pizzaMenu) {
     ofstream fout;
     fout.open("pizza_menu.bin", ios::binary);
@@ -118,9 +100,9 @@ void UmsjonRepo::storePizzaMenu(const vector<PizzaMenu> &pizzaMenu) {
     fout.close();
 }
 
-vector<MenuTopp> UmsjonRepo::retriveMenuTopp() {
-    vector<MenuTopp> menuTopp;
-    MenuTopp menutopp;
+vector<PizzaMenu> UmsjonRepo::retrivePizzaMenu() {
+    vector<PizzaMenu> pizzaMenu;
+    PizzaMenu pizzamenu;
     ifstream fin;
     fin.open("pizza_menu.bin", ios::binary);
     
@@ -130,27 +112,15 @@ vector<MenuTopp> UmsjonRepo::retriveMenuTopp() {
         fin.read((char*)(&menuToppcount), sizeof(int));
         
         for (int i=0; i<menuToppcount; i++) {
-            menutopp.read(fin);
-            menuTopp.push_back(menutopp);
+            pizzamenu.read(fin);
+            pizzaMenu.push_back(pizzamenu);
         }
         fin.close();
     }
-    return menuTopp;
+    return pizzaMenu;
 }
-void UmsjonRepo::menuTopp(const vector<MenuTopp> &menuTopp) {
-    ofstream fout;
-    fout.open("pizza_menu.bin", ios::binary);
-    
-    int menuToppcount = menuTopp.size();
-    
-    fout.write((char*)(&menuToppcount), sizeof(int));
-    
-    for (int i=0; i<menuToppcount; i++) {
-        menuTopp[i].write(fout);
-    }
-    fout.close();
-}
-/*/
+
+
 vector<PizzaType> UmsjonRepo::retrivePizaType() {
     vector<PizzaType> pizzaType;
     PizzaType pizzatype;
@@ -209,9 +179,11 @@ void UmsjonRepo::storePizzaPlace(const vector<PizzaPlace> &pizzaPlace) {
     int pizzaPlacecount = pizzaPlace.size();
     
     fout.write((char*)(&pizzaPlacecount), sizeof(int));
+    cout << endl;
     
     for (int i=0; i<pizzaPlacecount; i++) {
         pizzaPlace[i].write(fout);
+        cout << endl;
     }
     fout.close();
 }

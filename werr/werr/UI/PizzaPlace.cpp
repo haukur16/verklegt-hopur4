@@ -19,6 +19,7 @@ string PizzaPlace::getname() {
     return this -> name;
 }
 
+
 void PizzaPlace::write(ofstream& fout) const {
     int stringlength = name.length() +1;
     

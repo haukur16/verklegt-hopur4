@@ -8,6 +8,7 @@
 
 #include "SalaRepo.hpp"
 #include <fstream>
+#include <iostream>
 using namespace std;
 
 SalaRepo::SalaRepo() {
@@ -19,6 +20,7 @@ void SalaRepo::storePizza(const Pizza& pizza) {
     fout.open("pizza.bin", ios::binary|ios::app);
 
     pizza.write(fout);
+    cout << endl;
 
     fout.close();
 }
@@ -44,7 +46,7 @@ void SalaRepo::storeOther(const OtherOrder& other) {
     fout.open("other_order.bin", ios::binary|ios::app);
     
     other.write(fout);
-    
+    cout << endl;
     fout.close();
 }
 
@@ -54,12 +56,13 @@ OtherOrder SalaRepo::retrieveOther() {
     fin.open("other_order.bin", ios::binary);
     
     if (fin.is_open()) {
-        OtherOrder other;;
+        OtherOrder order;
         
-        other.read(fin);
+        order.read(fin);
         fin.close();
         
-        return other;
+        return order;
     }
     throw FileNotFoundException();
 }
+

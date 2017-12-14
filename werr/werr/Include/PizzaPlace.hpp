@@ -16,6 +16,7 @@ using namespace std;
 class PizzaPlace {
 private:
     string name;
+    int sendPick;
 public:
     PizzaPlace();
     void setname(string name);
