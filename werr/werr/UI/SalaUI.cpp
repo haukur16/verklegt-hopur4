@@ -15,6 +15,7 @@
 #include "Other_stuff.hpp"
 #include "TotalPrice.hpp"
 #include "PizzaPlace.hpp"
+#include "Comment.hpp"
 using namespace std;
 
 SalaUI::SalaUI() {
@@ -23,17 +24,22 @@ SalaUI::SalaUI() {
 
 void SalaUI::startUI() {
     char select = '\0';
-
-    cout << "m: make pizza" << endl;
-    cout << "r: read pizza" << endl;
+    cout << "========================" << endl;
+    cout << "What do you want to do? " << endl;
+    cout << "========================" << endl;
+    cout << "M: Make order" << endl;
+    cout << "------------------------" << endl;
+    cout << "R: Read order" << endl;
+    cout << "========================" << endl;
 
     cin >> select;
 
-    if (select == 'm') {
+    if (select == 'm'|| select == 'M') {
         vector<Topping> toppings = topprepo.retriveAllToppings();
         vector<Other_stuff> other_stuff = stuffrepo.retriveAllOtherStuff();
         vector<PizzaType> pizzatype = typerepo.retrivePizaType();
         vector<PizzaPlace> pizzaplace = placerepo.retrivePizzPlace();
+        vector<Comment> comment = commentrepo.retriveComment();
         Pizza pizza;
         OtherOrder order;
         int toppingselection = -1;
@@ -114,11 +120,21 @@ void SalaUI::startUI() {
                 }
             }
         }
+        cout << "Write comment: input many words" << endl;
+        int words;
+        cin >> words;
+        Comment comm;
+        for (unsigned int i=0; i<words; i++) {
+            cin >> comm;
+            order.addComment(comm);
+        }
+        
         pizzarepo.storeOther(order);
         pizzarepo.storePizza(pizza);
         cout << endl;
-}
-        else if(select == 'r') {
+  }
+
+        else if(select == 'r'|| select == 'R') {
             try {
                 Pizza pizza = pizzarepo.retrievePizza();
                 OtherOrder other = otherrepo.retrieveOther();

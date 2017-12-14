@@ -14,12 +14,14 @@
 #include <iostream>
 #include "Other_stuff.hpp"
 #include "PizzaPlace.hpp"
+#include "Comment.hpp"
 using namespace std;
 class OtherOrder {
 public:
     OtherOrder();
     void addOtherStuff(Other_stuff otherStuff);
     void addPlace(PizzaPlace pizzaplace);
+    void addComment(Comment comment);
     void setPickSend(int pickSend);
     int getPickSend();
     void setIsPaid(int ispaid);
@@ -30,9 +32,11 @@ public:
     friend ostream& operator << (ostream& out, const OtherOrder& order);
     vector<Other_stuff> othStuff();
     vector<PizzaPlace> pizzaPlace();
+    vector<Comment> commen();
 private:
     vector<Other_stuff> other_stuff;
     vector<PizzaPlace> pizzaPLace;
+    vector<Comment> commeNT;
     int pickSend;
     int ispaid;
 };

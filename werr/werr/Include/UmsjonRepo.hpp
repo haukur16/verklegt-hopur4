@@ -15,6 +15,7 @@
 #include "PizzaMenu.hpp"
 #include "PizzaType.hpp"
 #include "PizzaPlace.hpp"
+#include "Comment.hpp"
 
 using namespace std;
 
@@ -32,6 +33,8 @@ public:
     void storePizzaType(const vector<PizzaType> &pizzaType);
     vector<PizzaPlace> retrivePizzPlace();
     void storePizzaPlace(const vector<PizzaPlace> &pizzaPlace);
+    vector<Comment> retriveComment();
+    void storeComment(const vector<Comment> &commeNT);
 private:
 
 };

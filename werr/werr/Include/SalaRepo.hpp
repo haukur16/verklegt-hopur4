@@ -11,6 +11,7 @@
 
 #include "Pizza.hpp"
 #include "OtherOrder.hpp"
+#include "Comment.hpp"
 class FileNotFoundException{};
 class SalaRepo {
 private:

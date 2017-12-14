@@ -19,6 +19,7 @@ private:
     UmsjonRepo typerepo;
     UmsjonRepo placerepo;
     SalaRepo otherrepo;
+    UmsjonRepo commentrepo;
 public:
     SalaUI();
     void startUI();

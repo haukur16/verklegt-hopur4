@@ -187,3 +187,38 @@ void UmsjonRepo::storePizzaPlace(const vector<PizzaPlace> &pizzaPlace) {
     }
     fout.close();
 }
+vector<Comment> UmsjonRepo::retriveComment() {
+    vector<Comment> commeNT;
+    Comment comment;
+    ifstream fin;
+    fin.open("comment.bin", ios::binary);
+    
+    if(fin.is_open()) {
+        int commentcount;
+        
+        fin.read((char*)(&commentcount), sizeof(int));
+        
+        for (int i=0; i<commentcount; i++) {
+            comment.read(fin);
+            commeNT.push_back(comment);
+        }
+        fin.close();
+    }
+    return commeNT;
+}
+void UmsjonRepo::storeComment(const vector<Comment> &commeNT) {
+    ofstream fout;
+    fout.open("comment.bin", ios::binary);
+    
+    int commentcount = commeNT.size();
+    
+    fout.write((char*)(&commentcount), sizeof(int));
+    cout << endl;
+    
+    for (int i=0; i<commentcount; i++) {
+        commeNT[i].write(fout);
+        cout << endl;
+    }
+    fout.close();
+}
+
