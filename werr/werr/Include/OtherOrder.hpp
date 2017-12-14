@@ -20,6 +20,10 @@ public:
     OtherOrder();
     void addOtherStuff(Other_stuff otherStuff);
     void addPlace(PizzaPlace pizzaplace);
+    void setPickSend(int pickSend);
+    int getPickSend();
+    void setIsPaid(int ispaid);
+    int getIsPaid();
     void write(ofstream& fout) const;
     void read(ifstream& fin);
     friend istream& operator >> (istream& in, OtherOrder& order);
@@ -29,5 +33,7 @@ public:
 private:
     vector<Other_stuff> other_stuff;
     vector<PizzaPlace> pizzaPLace;
+    int pickSend;
+    int ispaid;
 };
 #endif /* OtherOrder_hpp */

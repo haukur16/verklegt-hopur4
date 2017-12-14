@@ -20,6 +20,18 @@ void OtherOrder::addPlace(PizzaPlace pizzaplace) {
     pizzaPLace.push_back(pizzaplace);
 }
 
+void OtherOrder::setPickSend(int ps) {
+    pickSend = ps;
+}
+int OtherOrder::getPickSend() {
+    return this -> pickSend;
+}
+void OtherOrder::setIsPaid(int ip) {
+    ispaid = ip;
+}
+int OtherOrder::getIsPaid() {
+    return this -> ispaid;
+}
 void OtherOrder::write(ofstream& fout) const {
     int oscount = other_stuff.size();
     fout.write((char*)(&oscount), sizeof(int));
@@ -33,7 +45,8 @@ void OtherOrder::write(ofstream& fout) const {
         pizzaPLace[i].write(fout);
         cout << endl;
     }
-    
+    fout.write((char*)(&pickSend), sizeof(int));
+    fout.write((char*)(&ispaid), sizeof(int));
 }
 void OtherOrder::read(ifstream& fin) {
     int oscount;
@@ -50,6 +63,8 @@ void OtherOrder::read(ifstream& fin) {
         pizzaplace.read(fin);
         addPlace(pizzaplace);
     }
+    fin.read((char*)(&pickSend), sizeof(int));
+    fin.read((char*)(&ispaid), sizeof(int));
 }
 istream& operator >> (istream& in, OtherOrder& order) {
     int otherStuffCount;
@@ -66,6 +81,9 @@ istream& operator >> (istream& in, OtherOrder& order) {
         in >> pizzaplace;
         order.addPlace(pizzaplace);
     }
+    
+    in >> order.pickSend;
+    in >> order.ispaid;
     return in;
 }
 ostream& operator << (ostream& out, const OtherOrder& order) {
@@ -79,6 +97,22 @@ ostream& operator << (ostream& out, const OtherOrder& order) {
     out << "Pizza Place:" << endl;
     for (unsigned int i=0; i<order.pizzaPLace.size(); i++) {
         out << order.pizzaPLace[i];
+    }
+    cout << "------------------------" << endl;
+    cout << "Pizza is :" << endl;
+    if (order.pickSend == 1) {
+        out << "PickUp" << endl;
+    }
+    else if (order.pickSend == 2) {
+        out << "Send" << endl;
+    }
+    cout << "------------------------" << endl;
+    cout << "Pizza is :" << endl;
+    if (order.ispaid == 1) {
+        out << "Paid" << endl;
+    }
+    else if (order.ispaid == 2) {
+        out << "Unpaid" << endl;
     }
     return out;
 }

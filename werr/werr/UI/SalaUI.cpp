@@ -55,10 +55,14 @@ void SalaUI::startUI() {
             for (unsigned int i=0; i<pizzatype.size(); i++) {
                 cout << "[" << i+1 << "]" << pizzatype[i];
             }
-            cin >> pizzaTypeSelection;
+                while (true) {
+                    cin >> pizzaTypeSelection;
             if (pizzaTypeSelection > 0 && pizzaTypeSelection <= (int)pizzatype.size()) {
                 pizza.addType(pizzatype[pizzaTypeSelection - 1]);
+                break;
             }
+                    
+                }
         }
 
         while (otherStuffSelection != 0) {
@@ -76,12 +80,40 @@ void SalaUI::startUI() {
             for (unsigned int i=0; i<pizzaplace.size(); i++) {
                 cout << "[" << i+1 << "]" << pizzaplace[i];
             }
+            while (true) {
             cin >> pizzaPlaceSelection;
             if (pizzaPlaceSelection > 0 && pizzaPlaceSelection <= (int)pizzaplace.size()) {
                 order.addPlace(pizzaplace[pizzaPlaceSelection - 1]);
+                break;
             }
         }
-
+        }
+        for (int i = 0; i<1; i++) {
+            cout << "Please enter if pizza is pickup or send" << endl;
+            for (unsigned int i=0; i<1; i++) {
+                while (true) {
+                int picksend;
+                cin >> picksend;
+                    if (picksend>0 && picksend<3) {
+                        order.setPickSend(picksend);
+                        break;
+                    }
+            }
+            }
+        }
+        for (int i = 0; i<1; i++) {
+            cout << "Please enter if pizza is paid or not" << endl;
+            for (unsigned int i=0; i<1; i++) {
+                while (true) {
+                    int ispaid;
+                    cin >> ispaid;
+                    if (ispaid>0 && ispaid<3) {
+                        order.setIsPaid(ispaid);
+                        break;
+                    }
+                }
+            }
+        }
         pizzarepo.storeOther(order);
         pizzarepo.storePizza(pizza);
         cout << endl;

@@ -17,7 +17,7 @@ SalaRepo::SalaRepo() {
 
 void SalaRepo::storePizza(const Pizza& pizza) {
     ofstream fout;
-    fout.open("pizza.bin", ios::binary|ios::app);
+    fout.open("pizza.bin", ios::binary);
 
     pizza.write(fout);
     cout << endl;
@@ -43,7 +43,7 @@ Pizza SalaRepo::retrievePizza() {
 
 void SalaRepo::storeOther(const OtherOrder& other) {
     ofstream fout;
-    fout.open("other_order.bin", ios::binary|ios::app);
+    fout.open("other_order.bin", ios::binary);
     
     other.write(fout);
     cout << endl;
