@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="verkefnidotid" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/verkefnidotid" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="../gitthing/verklegt-hopur4/Ég" />
+					<Add directory="gitthing/verklegt-hopur4/werr/werr/Include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/verkefnidotid" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="gitthing/verklegt-hopur4/werr/werr/Include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="../gitthing/verklegt-hopur4/werr/werr/Include" />
+			<Add directory="../gitthing/verklegt-hopur4/werr/werr/UI" />
+		</Compiler>
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/BakariUI.h" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/Delivery.h" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/MainUI.hpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/MenuTopp.hpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/Other_stuff.hpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/Pizza.hpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/PizzaMenu.hpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/PizzaPlace.hpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/PizzaType.hpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/SalaRepo.hpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/SalaUI.hpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/ServiceSala.hpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/ServiceUmsjon.hpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/Topping.hpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/TotalPrice.hpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/UmsjonRepo.hpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/Include/UmsjonUI.hpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/BakariUI.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/Delivery.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/MainUI.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/MenuTopp.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/Other_stuff.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/Pizza.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/PizzaMenu.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/PizzaPlace.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/PizzaType.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/SalaRepo.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/SalaUI.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/ServiceSala.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/ServiceUmsjon.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/Topping.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/TotalPrice.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/UmsjonRepo.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/UI/UmsjonUI.cpp" />
+		<Unit filename="../gitthing/verklegt-hopur4/werr/werr/main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

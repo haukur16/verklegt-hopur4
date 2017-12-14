@@ -1,0 +1,256 @@
+# depslib dependency file v1.0
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\Ég\main.cpp
+	<iostream>
+	<fstream>
+	"MainUI.hpp"
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\Ég\mainui.hpp
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\Ég\mainui.cpp
+	<iostream>
+	"MainUI.hpp"
+	"UmsjonUi.hpp"
+	"SalaUI.hpp"
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\Ég\umsjonui.hpp
+	"UmsjonRepo.hpp"
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\Ég\umsjonrepo.hpp
+	<vector>
+	"ServiceUmsjon.hpp"
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\Ég\serviceumsjon.hpp
+	<iostream>
+	<vector>
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\Ég\salaui.hpp
+	"UmsjonRepo.hpp"
+	"SalaRepo.hpp"
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\Ég\salarepo.hpp
+	"ServiceSala.hpp"
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\Ég\servicesala.hpp
+	<iostream>
+	<vector>
+	"ServiceUmsjon.hpp"
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\Ég\salarepo.cpp
+	"SalaRepo.hpp"
+	<fstream>
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\Ég\salaui.cpp
+	<vector>
+	<iostream>
+	"SalaUI.hpp"
+	"ServiceUmsjon.hpp"
+	"ServiceSala.hpp"
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\Ég\servicesala.cpp
+	"ServiceSala.hpp"
+	<stddef.h>
+	<fstream>
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\Ég\serviceumsjon.cpp
+	"ServiceUmsjon.hpp"
+	<fstream>
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\Ég\umsjonrepo.cpp
+	"UmsjonRepo.hpp"
+	<fstream>
+	<vector>
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\Ég\umsjonui.cpp
+	"UmsjonUI.hpp"
+	"ServiceUmsjon.hpp"
+	<vector>
+	<iostream>
+
+1513169519 source:c:\users\stefan\desktop\verkefnidotid\main.cpp
+	<iostream>
+	<fstream>
+	"MainUI.hpp"
+
+1513278005 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\mainui.cpp
+	<iostream>
+	<string>
+	<fstream>
+	"MainUI.hpp"
+	"UmsjonUi.hpp"
+	"SalaUI.hpp"
+	"BakariUI.h"
+	"Delivery.h"
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\mainui.hpp
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\umsjonui.hpp
+	"UmsjonRepo.hpp"
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\umsjonrepo.hpp
+	<vector>
+	"Topping.hpp"
+	"Other_stuff.hpp"
+	"PizzaMenu.hpp"
+	"PizzaType.hpp"
+	"MenuTopp.hpp"
+	"PizzaPlace.hpp"
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\topping.hpp
+	<stdio.h>
+	<string>
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\other_stuff.hpp
+	<stdio.h>
+	<string>
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\pizzamenu.hpp
+	<stdio.h>
+	<string>
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\pizzatype.hpp
+	<stdio.h>
+	<string>
+	<vector>
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\menutopp.hpp
+	<stdio.h>
+	<string>
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\pizzaplace.hpp
+	<stdio.h>
+	<string>
+
+1513170475 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\salaui.hpp
+	"UmsjonRepo.hpp"
+	"SalaRepo.hpp"
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\salarepo.hpp
+	"Pizza.hpp"
+
+1513275755 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\pizza.hpp
+	<vector>
+	<iostream>
+	"Topping.hpp"
+	"Other_stuff.hpp"
+	"PizzaType.hpp"
+	"PizzaPlace.hpp"
+	<string>
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\menutopp.cpp
+	"MenuTopp.hpp"
+	<fstream>
+	<iostream>
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\other_stuff.cpp
+	"Other_stuff.hpp"
+	<fstream>
+	<iostream>
+
+1513275892 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\pizza.cpp
+	"Pizza.hpp"
+	<stddef.h>
+	<fstream>
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\pizzamenu.cpp
+	"PizzaMenu.hpp"
+	"MenuTopp.hpp"
+	<fstream>
+	<iostream>
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\pizzaplace.cpp
+	"PizzaPlace.hpp"
+	<fstream>
+	<iostream>
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\pizzatype.cpp
+	"PizzaType.hpp"
+	<fstream>
+	<iostream>
+
+1513274277 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\salarepo.cpp
+	"SalaRepo.hpp"
+	<fstream>
+
+1513175539 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\salaui.cpp
+	<vector>
+	<iostream>
+	"SalaUI.hpp"
+	"Topping.hpp"
+	"Pizza.hpp"
+	"Other_stuff.hpp"
+	"TotalPrice.hpp"
+	"PizzaPlace.hpp"
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\totalprice.hpp
+	<stdio.h>
+	"Pizza.hpp"
+	"PizzaType.hpp"
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\servicesala.cpp
+	"ServiceSala.hpp"
+	<stddef.h>
+	<fstream>
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\servicesala.hpp
+	<iostream>
+	<vector>
+	"Topping.hpp"
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\serviceumsjon.cpp
+	"ServiceUmsjon.hpp"
+	<fstream>
+
+1513169413 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\serviceumsjon.hpp
+	<iostream>
+	<vector>
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\topping.cpp
+	"Topping.hpp"
+	<fstream>
+	<iostream>
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\totalprice.cpp
+	"TotalPrice.hpp"
+
+1513171315 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\umsjonrepo.cpp
+	"UmsjonRepo.hpp"
+	<fstream>
+	<vector>
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\umsjonui.cpp
+	"UmsjonUI.hpp"
+	"Topping.hpp"
+	"Other_stuff.hpp"
+	"PizzaMenu.hpp"
+	"MenuTopp.hpp"
+	<vector>
+	<iostream>
+
+1513169413 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\main.cpp
+	<iostream>
+	<fstream>
+	"MainUI.hpp"
+
+1513275892 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\bakariui.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<stdio.h>
+	"BakariUi.h"
+	"Pizza.hpp"
+	"SalaUI.hpp"
+	"TotalPrice.hpp"
+
+1513270973 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\bakariui.h
+	"Pizza.hpp"
+
+1513279004 source:c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\ui\delivery.cpp
+	"Delivery.h"
+	"MainUI.hpp"
+	"Pizza.hpp"
+	<iostream>
+	<string>
+	<fstream>
+
+1513277349 c:\users\stefan\desktop\gitthing\verklegt-hopur4\werr\werr\include\delivery.h
+
